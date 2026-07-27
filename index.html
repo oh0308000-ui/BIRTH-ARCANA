@@ -12,494 +12,612 @@
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 :root{
- --bg:#09080d;
- --cream:#f6eedf;
- --gold:#d9bb79;
- --gold2:#9c773c;
- --muted:#aaa3a6;
- --line:rgba(217,187,121,.23);
- --panel:rgba(255,255,255,.045);
+  --bg:#09080d;
+  --cream:#f6eedf;
+  --gold:#d9bb79;
+  --gold2:#9c773c;
+  --muted:#aaa3a6;
+  --line:rgba(217,187,121,.23);
+  --panel:rgba(255,255,255,.045);
 }
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
- min-height:100vh;
- background:
- radial-gradient(circle at 50% 0%,#281e34 0%,transparent 33%),
- radial-gradient(circle at 90% 75%,#17101f 0%,transparent 30%),
- var(--bg);
- color:var(--cream);
- font-family:"Noto Sans KR",sans-serif;
- overflow-x:hidden;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 50% 0%,#281e34 0%,transparent 33%),
+    radial-gradient(circle at 90% 75%,#17101f 0%,transparent 30%),
+    var(--bg);
+
+  color:var(--cream);
+  font-family:"Noto Sans KR",sans-serif;
+  overflow-x:hidden;
 }
 
-body:before{
- content:"";
- position:fixed;
- inset:0;
- pointer-events:none;
- opacity:.23;
- background-image:
- radial-gradient(circle,rgba(255,255,255,.8) 1px,transparent 1px),
- radial-gradient(circle,rgba(217,187,121,.8) 1px,transparent 1px);
- background-size:100px 100px,160px 160px;
- background-position:20px 20px,60px 80px;
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.23;
+
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.8) 1px,transparent 1px),
+    radial-gradient(circle,rgba(217,187,121,.8) 1px,transparent 1px);
+
+  background-size:100px 100px,160px 160px;
+  background-position:20px 20px,60px 80px;
 }
 
 .page{
- width:min(100%,780px);
- margin:auto;
- padding:25px 20px 80px;
- position:relative;
- z-index:2;
+  width:min(100%,780px);
+  margin:auto;
+  padding:25px 20px 80px;
+  position:relative;
+  z-index:2;
 }
 
+/* HEADER */
+
 header{
- display:flex;
- justify-content:space-between;
- align-items:center;
- margin-bottom:55px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:55px;
 }
 
 .logo{
- font-family:"Gowun Batang",serif;
- letter-spacing:4px;
- font-size:13px;
- color:var(--gold);
+  font-family:"Gowun Batang",serif;
+  letter-spacing:4px;
+  font-size:13px;
+  color:var(--gold);
 }
 
-.moon{font-size:22px;color:var(--gold)}
+.moon{
+  font-size:22px;
+  color:var(--gold);
+}
+
+/* HERO */
 
 .hero{
- text-align:center;
- padding:10px 0 42px;
+  text-align:center;
+  padding:10px 0 42px;
 }
 
 .eyebrow{
- font-size:10px;
- letter-spacing:4px;
- color:var(--gold);
- margin-bottom:18px;
+  font-size:10px;
+  letter-spacing:4px;
+  color:var(--gold);
+  margin-bottom:18px;
 }
 
 .hero h1{
- font-family:"Gowun Batang",serif;
- font-weight:400;
- font-size:clamp(36px,8vw,58px);
- line-height:1.3;
- margin-bottom:19px;
+  font-family:"Gowun Batang",serif;
+  font-weight:400;
+  font-size:clamp(36px,8vw,58px);
+  line-height:1.3;
+  margin-bottom:19px;
 }
 
 .hero p{
- font-size:13px;
- line-height:1.95;
- color:var(--muted);
+  font-size:13px;
+  line-height:1.95;
+  color:var(--muted);
 }
 
 .stars{
- margin-top:25px;
- color:var(--gold);
- letter-spacing:8px;
+  margin-top:25px;
+  color:var(--gold);
+  letter-spacing:8px;
 }
+
+/* INPUT PANEL */
 
 .panel{
- border:1px solid var(--line);
- background:var(--panel);
- backdrop-filter:blur(12px);
- border-radius:24px;
- padding:27px 23px;
- box-shadow:0 30px 90px rgba(0,0,0,.3);
+  border:1px solid var(--line);
+  background:var(--panel);
+  backdrop-filter:blur(12px);
+  border-radius:24px;
+  padding:27px 23px;
+  box-shadow:0 30px 90px rgba(0,0,0,.3);
 }
 
-.field{margin-bottom:23px}
+.field{
+  margin-bottom:23px;
+}
 
 .label{
- font-size:10px;
- letter-spacing:2px;
- color:var(--gold);
- margin-bottom:10px;
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--gold);
+  margin-bottom:10px;
 }
 
 input{
- width:100%;
- background:rgba(0,0,0,.28);
- border:1px solid rgba(255,255,255,.12);
- color:white;
- border-radius:13px;
- padding:15px;
- font-family:inherit;
- font-size:16px;
- outline:none;
+  width:100%;
+  background:rgba(0,0,0,.28);
+  border:1px solid rgba(255,255,255,.12);
+  color:white;
+  border-radius:13px;
+  padding:15px;
+  font-family:inherit;
+  font-size:16px;
+  outline:none;
 }
 
-input:focus{border-color:var(--gold)}
+input:focus{
+  border-color:var(--gold);
+}
+
+/* CALENDAR */
 
 .toggle{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:8px;
- margin-bottom:25px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:25px;
 }
 
 .toggle button,
 .small-toggle button{
- padding:13px;
- background:transparent;
- border:1px solid rgba(255,255,255,.12);
- color:#888;
- border-radius:11px;
- cursor:pointer;
- font-family:inherit;
+  padding:13px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,.12);
+  color:#888;
+  border-radius:11px;
+  cursor:pointer;
+  font-family:inherit;
 }
 
 .toggle button.active,
 .small-toggle button.active{
- border-color:var(--gold);
- background:rgba(217,187,121,.1);
- color:var(--gold);
+  border-color:var(--gold);
+  background:rgba(217,187,121,.1);
+  color:var(--gold);
 }
+
+/* DATE */
 
 .date-row{
- display:grid;
- grid-template-columns:1.5fr .8fr .8fr;
- gap:8px;
+  display:grid;
+  grid-template-columns:1.5fr .8fr .8fr;
+  gap:8px;
 }
 
-.date-box input{text-align:center}
+.date-box input{
+  text-align:center;
+}
 
 .date-box span{
- display:block;
- text-align:center;
- font-size:10px;
- color:#777;
- margin-top:7px;
+  display:block;
+  text-align:center;
+  font-size:10px;
+  color:#777;
+  margin-top:7px;
 }
 
 .example{
- text-align:center;
- color:#6f6971;
- font-size:10px;
- margin-top:12px;
+  text-align:center;
+  color:#6f6971;
+  font-size:10px;
+  margin-top:12px;
 }
 
 .lunar-options{
- display:none;
- margin-top:22px;
+  display:none;
+  margin-top:22px;
 }
 
-.lunar-options.show{display:block}
+.lunar-options.show{
+  display:block;
+}
 
 .small-toggle{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:8px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
 }
 
+/* BUTTON */
+
 .main-btn{
- width:100%;
- margin-top:28px;
- padding:17px;
- border:0;
- border-radius:14px;
- background:linear-gradient(135deg,#e5cc93,#aa8243);
- color:#171108;
- font-weight:700;
- font-family:inherit;
- cursor:pointer;
- font-size:14px;
+  width:100%;
+  margin-top:28px;
+  padding:17px;
+  border:0;
+  border-radius:14px;
+
+  background:
+    linear-gradient(135deg,#e5cc93,#aa8243);
+
+  color:#171108;
+  font-weight:700;
+  font-family:inherit;
+  cursor:pointer;
+  font-size:14px;
 }
 
 .notice{
- font-size:10px;
- line-height:1.8;
- color:#69636c;
- text-align:center;
- margin-top:16px;
+  font-size:10px;
+  line-height:1.8;
+  color:#69636c;
+  text-align:center;
+  margin-top:16px;
 }
 
+/* LOADING */
+
 #loading{
- display:none;
- text-align:center;
- padding:90px 0;
+  display:none;
+  text-align:center;
+  padding:90px 0;
 }
 
 .deck{
- width:125px;
- height:195px;
- position:relative;
- margin:0 auto 40px;
+  width:125px;
+  height:195px;
+  position:relative;
+  margin:0 auto 40px;
 }
 
 .deck-card{
- position:absolute;
- inset:0;
- border:1px solid var(--gold2);
- border-radius:13px;
- background:
- radial-gradient(circle,rgba(217,187,121,.7) 1px,transparent 2px),
- linear-gradient(145deg,#211729,#0c0910);
- background-size:22px 22px,auto;
+  position:absolute;
+  inset:0;
+
+  border:1px solid var(--gold2);
+  border-radius:13px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(217,187,121,.7) 1px,
+      transparent 2px
+    ),
+    linear-gradient(145deg,#211729,#0c0910);
+
+  background-size:22px 22px,auto;
 }
 
-.deck-card:nth-child(1){animation:left .7s infinite alternate}
-.deck-card:nth-child(2){animation:right .7s infinite alternate}
+.deck-card:nth-child(1){
+  animation:left .7s infinite alternate;
+}
+
+.deck-card:nth-child(2){
+  animation:right .7s infinite alternate;
+}
 
 @keyframes left{
- to{transform:translateX(-32px) rotate(-12deg)}
+  to{
+    transform:translateX(-32px) rotate(-12deg);
+  }
 }
 
 @keyframes right{
- to{transform:translateX(32px) rotate(12deg)}
+  to{
+    transform:translateX(32px) rotate(12deg);
+  }
 }
 
 .loading-text{
- font-size:12px;
- letter-spacing:2px;
- color:var(--muted);
+  font-size:12px;
+  letter-spacing:2px;
+  color:var(--muted);
 }
 
+/* RESULT */
+
 #result{
- display:none;
- animation:appear .8s ease;
+  display:none;
+  animation:appear .8s ease;
 }
 
 @keyframes appear{
- from{opacity:0;transform:translateY(25px)}
- to{opacity:1;transform:none}
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+
+  to{
+    opacity:1;
+    transform:none;
+  }
 }
 
-.result-head{text-align:center}
+.result-head{
+  text-align:center;
+}
 
 .result-small{
- font-size:10px;
- letter-spacing:4px;
- color:var(--gold);
+  font-size:10px;
+  letter-spacing:4px;
+  color:var(--gold);
 }
 
+/* CALCULATION */
+
 .calculation{
- margin:30px 0;
- border:1px solid var(--line);
- border-radius:18px;
- padding:22px;
- background:rgba(255,255,255,.025);
+  margin:30px 0;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+  background:rgba(255,255,255,.025);
 }
 
 .calc-title{
- font-size:10px;
- letter-spacing:2px;
- color:var(--gold);
- margin-bottom:18px;
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--gold);
+  margin-bottom:18px;
 }
 
 .birth-display{
- font-family:"Gowun Batang",serif;
- font-size:17px;
- color:#d9d1d4;
- margin-bottom:18px;
+  font-family:"Gowun Batang",serif;
+  font-size:17px;
+  color:#d9d1d4;
+  margin-bottom:18px;
 }
 
 .math{
- font-family:"Gowun Batang",serif;
- font-size:18px;
- line-height:2;
+  font-family:"Gowun Batang",serif;
+  font-size:18px;
+  line-height:2;
 }
 
 .arrow{
- color:var(--gold);
- display:block;
- line-height:1.4;
+  color:var(--gold);
+  display:block;
+  line-height:1.4;
 }
 
 .result-number{
- margin-top:15px;
- font-size:11px;
- color:var(--gold);
- letter-spacing:2px;
+  margin-top:17px;
+  font-size:11px;
+  color:var(--gold);
+  letter-spacing:2px;
 }
 
+/* CARDS */
+
 .cards-title{
- font-family:"Gowun Batang",serif;
- font-size:27px;
- font-weight:400;
- margin:35px 0 10px;
+  font-family:"Gowun Batang",serif;
+  font-size:27px;
+  font-weight:400;
+  margin:35px 0 10px;
 }
 
 .cards-sub{
- color:#8e878b;
- font-size:12px;
- line-height:1.8;
+  color:#8e878b;
+  font-size:12px;
+  line-height:1.8;
 }
 
 .card-grid{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:18px;
- margin-top:30px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:30px;
 }
 
-.tarot-wrap{text-align:center}
+.tarot-wrap{
+  text-align:center;
+}
 
 .card-label{
- color:var(--gold);
- font-size:10px;
- letter-spacing:2px;
- margin-bottom:12px;
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:2px;
+  margin-bottom:12px;
 }
 
 .tarot{
- width:100%;
- max-width:220px;
- aspect-ratio:.61;
- margin:auto;
- border:1px solid #bc914a;
- border-radius:16px;
- background:
- radial-gradient(circle at 50% 40%,rgba(217,187,121,.18),transparent 34%),
- linear-gradient(145deg,#211829,#0b090e);
- box-shadow:0 25px 70px rgba(0,0,0,.5);
- display:flex;
- flex-direction:column;
- align-items:center;
- justify-content:center;
- position:relative;
- animation:cardReveal 1.2s ease;
+  width:100%;
+  max-width:220px;
+  aspect-ratio:.61;
+  margin:auto;
+
+  border:1px solid #bc914a;
+  border-radius:16px;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(217,187,121,.18),
+      transparent 34%
+    ),
+    linear-gradient(145deg,#211829,#0b090e);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.5);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+
+  animation:cardReveal 1.2s ease;
 }
 
 @keyframes cardReveal{
- 0%{opacity:0;transform:rotateY(90deg) scale(.8)}
- 100%{opacity:1;transform:none}
+  0%{
+    opacity:0;
+    transform:rotateY(90deg) scale(.8);
+  }
+
+  100%{
+    opacity:1;
+    transform:none;
+  }
 }
 
 .roman{
- position:absolute;
- top:17px;
- color:var(--gold);
- font-family:"Gowun Batang",serif;
+  position:absolute;
+  top:17px;
+  color:var(--gold);
+  font-family:"Gowun Batang",serif;
 }
 
 .symbol{
- font-size:65px;
- margin-bottom:22px;
+  font-size:65px;
+  margin-bottom:22px;
 }
 
 .card-en{
- font-family:"Gowun Batang",serif;
- font-size:17px;
- letter-spacing:1px;
+  font-family:"Gowun Batang",serif;
+  font-size:17px;
+  letter-spacing:1px;
 }
 
 .card-ko{
- color:var(--gold);
- font-size:12px;
- margin-top:8px;
+  color:var(--gold);
+  font-size:12px;
+  margin-top:8px;
 }
 
 .card-keywords{
- font-size:11px;
- color:#8e8589;
- margin-top:12px;
- line-height:1.7;
+  font-size:11px;
+  color:#8e8589;
+  margin-top:12px;
+  line-height:1.7;
 }
 
+/* REPORT */
+
 .report-intro{
- margin-top:55px;
- text-align:center;
+  margin-top:55px;
+  text-align:center;
 }
 
 .report-intro span{
- font-size:10px;
- color:var(--gold);
- letter-spacing:3px;
+  font-size:10px;
+  color:var(--gold);
+  letter-spacing:3px;
 }
 
 .report-intro h2{
- font-family:"Gowun Batang",serif;
- font-weight:400;
- font-size:27px;
- margin-top:10px;
+  font-family:"Gowun Batang",serif;
+  font-weight:400;
+  font-size:27px;
+  margin-top:10px;
 }
 
 .sections{
- display:grid;
- gap:13px;
- margin-top:28px;
+  display:grid;
+  gap:13px;
+  margin-top:28px;
 }
 
 .section{
- border:1px solid rgba(255,255,255,.075);
- background:rgba(255,255,255,.032);
- border-radius:18px;
- padding:24px;
+  border:1px solid rgba(255,255,255,.075);
+  background:rgba(255,255,255,.032);
+  border-radius:18px;
+  padding:24px;
 }
 
 .section-number{
- font-size:9px;
- letter-spacing:2px;
- color:#75634a;
- margin-bottom:7px;
+  font-size:9px;
+  letter-spacing:2px;
+  color:#75634a;
+  margin-bottom:7px;
 }
 
 .section h3{
- font-family:"Gowun Batang",serif;
- font-size:17px;
- font-weight:400;
- color:var(--gold);
- margin-bottom:12px;
+  font-family:"Gowun Batang",serif;
+  font-size:17px;
+  font-weight:400;
+  color:var(--gold);
+  margin-bottom:12px;
 }
 
 .section p{
- font-size:13px;
- line-height:2;
- color:#c3bcc0;
- white-space:pre-line;
+  font-size:13px;
+  line-height:2;
+  color:#c3bcc0;
+  white-space:pre-line;
 }
 
 .question{
- text-align:center;
- margin-top:13px;
- border-color:var(--line);
+  text-align:center;
+  margin-top:13px;
+  border-color:var(--line);
 }
 
 .question p{
- font-family:"Gowun Batang",serif;
- font-size:17px;
- color:var(--cream);
+  font-family:"Gowun Batang",serif;
+  font-size:17px;
+  color:var(--cream);
 }
 
 .retry{
- width:100%;
- margin-top:25px;
- padding:16px;
- background:transparent;
- border:1px solid var(--line);
- border-radius:13px;
- color:var(--gold);
- font-family:inherit;
- cursor:pointer;
+  width:100%;
+  margin-top:25px;
+  padding:16px;
+  background:transparent;
+  border:1px solid var(--line);
+  border-radius:13px;
+  color:var(--gold);
+  font-family:inherit;
+  cursor:pointer;
 }
 
 footer{
- margin-top:60px;
- text-align:center;
- font-size:9px;
- line-height:1.8;
- color:#504a52;
+  margin-top:60px;
+  text-align:center;
+  font-size:9px;
+  line-height:1.8;
+  color:#504a52;
 }
 
+/* MOBILE */
+
 @media(max-width:520px){
- header{margin-bottom:35px}
- .panel{padding:23px 17px}
- .date-row{gap:5px}
- .date-box input{padding:14px 5px}
- .card-grid{gap:10px}
- .tarot{border-radius:13px}
- .symbol{font-size:48px}
- .card-en{font-size:13px}
+
+  header{
+    margin-bottom:35px;
+  }
+
+  .panel{
+    padding:23px 17px;
+  }
+
+  .date-row{
+    gap:5px;
+  }
+
+  .date-box input{
+    padding:14px 5px;
+  }
+
+  .card-grid{
+    gap:10px;
+  }
+
+  .tarot{
+    border-radius:13px;
+  }
+
+  .symbol{
+    font-size:48px;
+  }
+
+  .card-en{
+    font-size:13px;
+  }
+
 }
+
 </style>
 </head>
 
@@ -508,15 +626,29 @@ footer{
 <div class="page">
 
 <header>
- <div class="logo">BIRTH ARCANA</div>
- <div class="moon">☾</div>
+
+<div class="logo">
+BIRTH ARCANA
+</div>
+
+<div class="moon">
+☾
+</div>
+
 </header>
+
+
+<!-- ==========================
+     START
+========================== -->
 
 <main id="start">
 
 <section class="hero">
 
-<div class="eyebrow">YOUR BIRTH · YOUR ARCANA</div>
+<div class="eyebrow">
+YOUR BIRTH · YOUR ARCANA
+</div>
 
 <h1>
 생일에 숨겨진<br>
@@ -525,111 +657,207 @@ footer{
 
 <p>
 태어난 날짜에는 당신을 상징하는 숫자가 숨어 있습니다.<br>
-생년월일을 따라 두 장의 탄생 카드를 만나고<br>
+생년월일의 숫자를 따라 두 장의 탄생 카드를 만나고<br>
 그 안에 담긴 나의 모습을 발견해보세요.
 </p>
 
-<div class="stars">✦ · ✦</div>
+<div class="stars">
+✦ · ✦
+</div>
 
 </section>
+
 
 <div class="panel">
 
 <div class="field">
- <div class="label">NAME</div>
- <input id="name" type="text" maxlength="15"
- placeholder="이름 또는 닉네임">
+
+<div class="label">
+NAME
 </div>
 
-<div class="label">CALENDAR</div>
+<input
+  id="name"
+  type="text"
+  maxlength="15"
+  placeholder="이름 또는 닉네임"
+>
+
+</div>
+
+
+<div class="label">
+CALENDAR
+</div>
 
 <div class="toggle">
- <button type="button" id="solarBtn" class="active"
- onclick="selectCalendar('solar')">양력</button>
 
- <button type="button" id="lunarBtn"
- onclick="selectCalendar('lunar')">음력</button>
+<button
+  type="button"
+  id="solarBtn"
+  class="active"
+  onclick="selectCalendar('solar')"
+>
+양력
+</button>
+
+<button
+  type="button"
+  id="lunarBtn"
+  onclick="selectCalendar('lunar')"
+>
+음력
+</button>
+
 </div>
 
-<div class="label">DATE OF BIRTH</div>
+
+<div class="label">
+DATE OF BIRTH
+</div>
+
 
 <div class="date-row">
 
 <div class="date-box">
-<input id="year" type="text"
-inputmode="numeric" maxlength="4"
-placeholder="YYYY">
-<span>년 · 4자리</span>
+
+<input
+  id="year"
+  type="text"
+  inputmode="numeric"
+  autocomplete="bday-year"
+  maxlength="4"
+  placeholder="YYYY"
+>
+
+<span>
+년 · 4자리
+</span>
+
 </div>
+
 
 <div class="date-box">
-<input id="month" type="text"
-inputmode="numeric" maxlength="2"
-placeholder="MM">
-<span>월</span>
+
+<input
+  id="month"
+  type="text"
+  inputmode="numeric"
+  autocomplete="bday-month"
+  maxlength="2"
+  placeholder="MM"
+>
+
+<span>
+월
+</span>
+
 </div>
+
 
 <div class="date-box">
-<input id="day" type="text"
-inputmode="numeric" maxlength="2"
-placeholder="DD">
-<span>일</span>
+
+<input
+  id="day"
+  type="text"
+  inputmode="numeric"
+  autocomplete="bday-day"
+  maxlength="2"
+  placeholder="DD"
+>
+
+<span>
+일
+</span>
+
 </div>
 
 </div>
+
 
 <div class="example">
-예) 1992년 6월 11일 → 1992 / 06 / 11
+예) 2004년 3월 8일 → 2004 / 03 / 08
 </div>
 
-<div id="lunarOptions" class="lunar-options">
 
-<div class="label">LUNAR MONTH</div>
+<div
+  id="lunarOptions"
+  class="lunar-options"
+>
+
+<div class="label">
+LUNAR MONTH
+</div>
 
 <div class="small-toggle">
 
-<button id="normalMonth"
-class="active"
-onclick="selectLeap(false)">
+<button
+  type="button"
+  id="normalMonth"
+  class="active"
+  onclick="selectLeap(false)"
+>
 평달
 </button>
 
-<button id="leapMonth"
-onclick="selectLeap(true)">
+<button
+  type="button"
+  id="leapMonth"
+  onclick="selectLeap(true)"
+>
 윤달
 </button>
 
 </div>
+
 </div>
 
-<button class="main-btn"
-onclick="startReading()">
+
+<button
+  type="button"
+  class="main-btn"
+  onclick="startReading()"
+>
 나의 탄생 카드 만나기
 </button>
 
+
 <div class="notice">
-본 콘텐츠는 타로 상징을 활용한 자기이해·성찰용 콘텐츠입니다.<br>
-미래를 확정적으로 예측하거나 성격을 과학적으로 진단하는 검사가 아닙니다.
+
+본 콘텐츠는 타로와 숫자 상징을 활용한 자기이해·성찰용 콘텐츠입니다.<br>
+성격을 과학적으로 진단하거나 미래를 확정적으로 예측하는 검사가 아닙니다.
+
 </div>
 
 </div>
+
 </main>
 
+
+<!-- ==========================
+     LOADING
+========================== -->
 
 <section id="loading">
 
 <div class="deck">
+
 <div class="deck-card"></div>
 <div class="deck-card"></div>
 <div class="deck-card"></div>
+
 </div>
 
 <div class="loading-text">
-당신의 탄생 카드를 찾고 있습니다...
+당신의 생일 속 탄생 카드를 찾고 있습니다...
 </div>
 
 </section>
 
+
+<!-- ==========================
+     RESULT
+========================== -->
 
 <section id="result">
 
@@ -639,97 +867,182 @@ onclick="startReading()">
 YOUR BIRTH ARCANA
 </div>
 
+
 <div class="calculation">
 
 <div class="calc-title">
 BIRTH CARD CALCULATION
 </div>
 
-<div id="birthDisplay"
-class="birth-display"></div>
+<div
+  id="birthDisplay"
+  class="birth-display"
+></div>
 
-<div id="math"
-class="math"></div>
+<div
+  id="math"
+  class="math"
+></div>
 
-<div id="resultNumbers"
-class="result-number"></div>
+<div
+  id="resultNumbers"
+  class="result-number"
+></div>
 
 </div>
 
-<h2 id="resultTitle"
-class="cards-title"></h2>
+
+<h2
+  id="resultTitle"
+  class="cards-title"
+></h2>
+
 
 <div class="cards-sub">
-첫 번째 카드는 삶에서 크게 드러나는 핵심 테마를,<br>
-두 번째 카드는 그 에너지의 근원과 내면의 방향을 상징합니다.
+
+두 장의 카드는 서로 다른 내가 아니라,<br>
+하나의 숫자 흐름 안에서 연결되는 두 가지 상징입니다.
+
 </div>
+
 
 <div class="card-grid">
 
-<div class="tarot-wrap">
 
-<div class="card-label">
-FIRST BIRTH CARD
-</div>
-
-<div class="tarot">
-<div id="roman1" class="roman"></div>
-<div id="symbol1" class="symbol"></div>
-<div id="en1" class="card-en"></div>
-<div id="ko1" class="card-ko"></div>
-</div>
-
-<div id="keywords1"
-class="card-keywords"></div>
-
-</div>
-
+<!-- FIRST -->
 
 <div class="tarot-wrap">
 
 <div class="card-label">
-SECOND BIRTH CARD
+BIRTH CARD
 </div>
 
 <div class="tarot">
-<div id="roman2" class="roman"></div>
-<div id="symbol2" class="symbol"></div>
-<div id="en2" class="card-en"></div>
-<div id="ko2" class="card-ko"></div>
+
+<div
+  id="roman1"
+  class="roman"
+></div>
+
+<div
+  id="symbol1"
+  class="symbol"
+></div>
+
+<div
+  id="en1"
+  class="card-en"
+></div>
+
+<div
+  id="ko1"
+  class="card-ko"
+></div>
+
 </div>
 
-<div id="keywords2"
-class="card-keywords"></div>
+<div
+  id="keywords1"
+  class="card-keywords"
+></div>
 
 </div>
+
+
+<!-- SECOND -->
+
+<div class="tarot-wrap">
+
+<div class="card-label">
+CONNECTED CARD
+</div>
+
+<div class="tarot">
+
+<div
+  id="roman2"
+  class="roman"
+></div>
+
+<div
+  id="symbol2"
+  class="symbol"
+></div>
+
+<div
+  id="en2"
+  class="card-en"
+></div>
+
+<div
+  id="ko2"
+  class="card-ko"
+></div>
+
+</div>
+
+<div
+  id="keywords2"
+  class="card-keywords"
+></div>
+
+</div>
+
 
 </div>
 </div>
 
 
 <div class="report-intro">
-<span>PERSONAL ARCANA REPORT</span>
-<h2>두 카드가 함께 말하는 당신</h2>
+
+<span>
+PERSONAL ARCANA REPORT
+</span>
+
+<h2>
+두 카드가 함께 말하는 당신
+</h2>
+
 </div>
 
-<div id="sections" class="sections"></div>
+
+<div
+  id="sections"
+  class="sections"
+></div>
+
 
 <div class="section question">
-<div class="section-number">SELF QUESTION</div>
-<h3>두 카드가 당신에게 묻습니다</h3>
-<p id="question"></p>
+
+<div class="section-number">
+SELF QUESTION
 </div>
 
-<button class="retry"
-onclick="resetReading()">
+<h3>
+카드가 당신에게 묻습니다
+</h3>
+
+<p id="question"></p>
+
+</div>
+
+
+<button
+  type="button"
+  class="retry"
+  onclick="resetReading()"
+>
 다른 생일로 다시 보기
 </button>
 
 </section>
 
+
 <footer>
+
 BIRTH ARCANA<br>
 Tarot symbolism for self-reflection.
+
 </footer>
 
 </div>
@@ -737,914 +1050,1876 @@ Tarot symbolism for self-reflection.
 
 <script>
 
-let calendarType="solar";
-let isLeapMonth=false;
+/* ==========================================
+   기본 설정
+========================================== */
+
+let calendarType = "solar";
+let isLeapMonth = false;
 
 
-/* ==============================
-   INPUT
-============================== */
+/* ==========================================
+   양력 / 음력
+========================================== */
 
 function selectCalendar(type){
 
- calendarType=type;
+  calendarType = type;
 
- document.getElementById("solarBtn")
- .classList.toggle("active",type==="solar");
+  document
+    .getElementById("solarBtn")
+    .classList.toggle(
+      "active",
+      type === "solar"
+    );
 
- document.getElementById("lunarBtn")
- .classList.toggle("active",type==="lunar");
+  document
+    .getElementById("lunarBtn")
+    .classList.toggle(
+      "active",
+      type === "lunar"
+    );
 
- document.getElementById("lunarOptions")
- .classList.toggle("show",type==="lunar");
+  document
+    .getElementById("lunarOptions")
+    .classList.toggle(
+      "show",
+      type === "lunar"
+    );
 }
 
 
 function selectLeap(value){
 
- isLeapMonth=value;
+  isLeapMonth = value;
 
- document.getElementById("normalMonth")
- .classList.toggle("active",!value);
+  document
+    .getElementById("normalMonth")
+    .classList.toggle(
+      "active",
+      !value
+    );
 
- document.getElementById("leapMonth")
- .classList.toggle("active",value);
+  document
+    .getElementById("leapMonth")
+    .classList.toggle(
+      "active",
+      value
+    );
 }
 
 
-const yearInput=document.getElementById("year");
-const monthInput=document.getElementById("month");
-const dayInput=document.getElementById("day");
+/* ==========================================
+   날짜 입력 강제 제한
+========================================== */
+
+const yearInput =
+  document.getElementById("year");
+
+const monthInput =
+  document.getElementById("month");
+
+const dayInput =
+  document.getElementById("day");
 
 
-function forceDigits(input,length){
+function forceDigits(
+  input,
+  maxLength
+){
 
- input.value=
- input.value
- .replace(/\D/g,"")
- .slice(0,length);
+  input.value =
+    input.value
+      .replace(/[^0-9]/g,"")
+      .slice(0,maxLength);
+
 }
 
 
-yearInput.addEventListener("input",()=>{
- forceDigits(yearInput,4);
-});
+yearInput.addEventListener(
+  "input",
+  function(){
 
-monthInput.addEventListener("input",()=>{
- forceDigits(monthInput,2);
-});
+    forceDigits(
+      this,
+      4
+    );
 
-dayInput.addEventListener("input",()=>{
- forceDigits(dayInput,2);
-});
+  }
+);
 
+
+monthInput.addEventListener(
+  "input",
+  function(){
+
+    forceDigits(
+      this,
+      2
+    );
+
+  }
+);
+
+
+dayInput.addEventListener(
+  "input",
+  function(){
+
+    forceDigits(
+      this,
+      2
+    );
+
+  }
+);
+
+
+/* 붙여넣기 방어 */
+
+yearInput.addEventListener(
+  "paste",
+  function(){
+
+    setTimeout(
+      () => forceDigits(this,4),
+      0
+    );
+
+  }
+);
+
+monthInput.addEventListener(
+  "paste",
+  function(){
+
+    setTimeout(
+      () => forceDigits(this,2),
+      0
+    );
+
+  }
+);
+
+dayInput.addEventListener(
+  "paste",
+  function(){
+
+    setTimeout(
+      () => forceDigits(this,2),
+      0
+    );
+
+  }
+);
+
+
+/* ==========================================
+   날짜 검증
+========================================== */
 
 function getBirthDate(){
 
- const ys=yearInput.value.trim();
- const ms=monthInput.value.trim();
- const ds=dayInput.value.trim();
+  const yearText =
+    yearInput.value.trim();
 
- if(!/^\d{4}$/.test(ys)){
-  alert("태어난 연도를 4자리로 입력해주세요.\n예) 1992");
-  yearInput.focus();
-  return null;
- }
+  const monthText =
+    monthInput.value.trim();
 
- if(!/^\d{1,2}$/.test(ms)){
-  alert("태어난 월을 입력해주세요.");
-  monthInput.focus();
-  return null;
- }
+  const dayText =
+    dayInput.value.trim();
 
- if(!/^\d{1,2}$/.test(ds)){
-  alert("태어난 일을 입력해주세요.");
-  dayInput.focus();
-  return null;
- }
 
- const y=Number(ys);
- const m=Number(ms);
- const d=Number(ds);
+  if(
+    !/^\d{4}$/.test(yearText)
+  ){
 
- if(m<1||m>12){
-  alert("월은 1~12 사이로 입력해주세요.");
-  return null;
- }
+    alert(
+      "태어난 연도를 숫자 4자리로 입력해주세요.\n\n예) 2004"
+    );
 
- if(calendarType==="solar"){
+    yearInput.focus();
 
-  const maxDay=
-  new Date(y,m,0).getDate();
-
-  if(d<1||d>maxDay){
-   alert("존재하지 않는 날짜입니다.");
-   return null;
+    return null;
   }
 
- }else{
 
-  if(d<1||d>30){
-   alert("음력 날짜는 1~30 사이로 입력해주세요.");
-   return null;
+  if(
+    !/^\d{1,2}$/.test(monthText)
+  ){
+
+    alert(
+      "태어난 월을 입력해주세요."
+    );
+
+    monthInput.focus();
+
+    return null;
   }
 
- }
 
- return {y,m,d};
+  if(
+    !/^\d{1,2}$/.test(dayText)
+  ){
+
+    alert(
+      "태어난 일을 입력해주세요."
+    );
+
+    dayInput.focus();
+
+    return null;
+  }
+
+
+  const year =
+    Number(yearText);
+
+  const month =
+    Number(monthText);
+
+  const day =
+    Number(dayText);
+
+
+  if(
+    year < 1000 ||
+    year > 2099
+  ){
+
+    alert(
+      "연도를 확인해주세요."
+    );
+
+    yearInput.focus();
+
+    return null;
+  }
+
+
+  if(
+    month < 1 ||
+    month > 12
+  ){
+
+    alert(
+      "월은 1~12 사이로 입력해주세요."
+    );
+
+    monthInput.focus();
+
+    return null;
+  }
+
+
+  if(
+    calendarType === "solar"
+  ){
+
+    const maxDay =
+      new Date(
+        year,
+        month,
+        0
+      ).getDate();
+
+
+    if(
+      day < 1 ||
+      day > maxDay
+    ){
+
+      alert(
+        `${year}년 ${month}월에는 ${day}일이 없습니다.`
+      );
+
+      dayInput.focus();
+
+      return null;
+    }
+
+  }else{
+
+    if(
+      day < 1 ||
+      day > 30
+    ){
+
+      alert(
+        "음력 날짜는 1~30 사이로 입력해주세요."
+      );
+
+      dayInput.focus();
+
+      return null;
+    }
+
+  }
+
+
+  return {
+    year,
+    month,
+    day
+  };
 }
 
 
-/* ==============================
-   카드
-============================== */
+/* ==========================================
+   카드 데이터
+========================================== */
 
-const cards={
+const cards = {
 
 1:{
-roman:"I",
-en:"THE MAGICIAN",
-ko:"마법사",
-symbol:"✦",
-keywords:"창조 · 시작 · 의지 · 실행",
-essence:"자신에게 주어진 능력을 실제 행동으로 바꾸는 힘",
-strength:"새로운 일을 시작하고 아이디어를 현실로 만들어내는 실행력이 강합니다.",
-shadow:"가능성이 많기 때문에 여러 일을 동시에 시작하거나 자신의 능력을 증명하려는 마음이 커질 수 있습니다.",
-love:"관계에서도 적극적인 편이며 함께 새로운 경험을 만들어가는 사람에게 끌릴 수 있습니다.",
-career:"기획, 창업, 마케팅, 콘텐츠처럼 아이디어를 현실화하는 분야에서 강점을 보일 수 있습니다.",
-growth:"시작하는 힘에 지속성과 마무리하는 힘을 더하는 것이 중요한 성장 포인트입니다."
+  roman:"I",
+  en:"THE MAGICIAN",
+  ko:"마법사",
+  symbol:"✦",
+  keywords:"시작 · 창조 · 의지 · 실행 · 가능성",
+
+  essence:
+  "자신에게 주어진 능력과 가능성을 실제 행동으로 옮기는 힘",
+
+  strength:
+  "아이디어를 떠올리는 것에서 멈추지 않고 직접 시도하며 새로운 가능성을 만들어낼 수 있습니다. 아무것도 정해지지 않은 상황에서도 자신의 방식으로 시작점을 만들어내는 힘이 있습니다.",
+
+  shadow:
+  "새로운 가능성에 쉽게 끌리는 만큼 여러 일을 동시에 시작하거나 결과를 통해 자신의 능력을 증명하려는 마음이 강해질 수 있습니다.",
+
+  love:
+  "관계에서도 비교적 적극적으로 움직이며 함께 새로운 경험을 만들어갈 수 있는 사람에게 매력을 느낄 수 있습니다.",
+
+  career:
+  "기획, 창업, 마케팅, 콘텐츠, 영업, 프로젝트 운영처럼 자신의 생각을 실제 결과로 연결할 수 있는 분야에서 강점을 발휘할 수 있습니다.",
+
+  growth:
+  "새로운 것을 시작하는 힘에 이미 시작한 것을 끝까지 완성하는 힘을 더하는 것이 중요한 성장 포인트입니다."
 },
 
 2:{
-roman:"II",
-en:"THE HIGH PRIESTESS",
-ko:"여사제",
-symbol:"☾",
-keywords:"직관 · 관찰 · 내면 · 통찰",
-essence:"겉으로 보이지 않는 흐름과 의미를 알아차리는 힘",
-strength:"섬세한 관찰력과 직관으로 다른 사람이 놓치는 부분을 발견할 수 있습니다.",
-shadow:"충분한 확신이 생길 때까지 생각하다 행동이 늦어질 수 있습니다.",
-love:"빠르게 가까워지는 관계보다 신뢰와 깊은 대화가 있는 관계를 중요하게 생각합니다.",
-career:"연구, 상담, 분석, 글쓰기처럼 깊이 관찰하고 이해하는 분야와 잘 맞을 수 있습니다.",
-growth:"마음속에서 발견한 답을 실제 말과 행동으로 표현하는 연습이 중요합니다."
+  roman:"II",
+  en:"THE HIGH PRIESTESS",
+  ko:"여사제",
+  symbol:"☾",
+  keywords:"직관 · 통찰 · 관찰 · 내면 · 깊이",
+
+  essence:
+  "겉으로 드러나지 않은 흐름과 의미를 섬세하게 알아차리는 힘",
+
+  strength:
+  "말보다 분위기와 뉘앙스, 행동보다 그 안의 의도를 섬세하게 읽어낼 수 있습니다. 깊이 생각해야 하는 상황에서 뛰어난 통찰력을 보여줄 수 있습니다.",
+
+  shadow:
+  "생각이 깊어지는 만큼 충분한 확신이 생길 때까지 행동을 미루거나 자신의 감정을 마음속에 오래 담아둘 수 있습니다.",
+
+  love:
+  "빠르게 가까워지는 관계보다 신뢰가 쌓이고 깊은 대화를 나눌 수 있는 관계를 중요하게 생각할 가능성이 높습니다.",
+
+  career:
+  "연구, 상담, 분석, 전략, 글쓰기처럼 관찰과 깊은 사고가 필요한 분야와 잘 맞을 수 있습니다.",
+
+  growth:
+  "마음속에서 발견한 답을 생각으로만 간직하지 않고 실제 말과 행동으로 표현하는 연습이 중요합니다."
 },
 
 3:{
-roman:"III",
-en:"THE EMPRESS",
-ko:"여황제",
-symbol:"❀",
-keywords:"풍요 · 감각 · 돌봄 · 성장",
-essence:"사람과 가능성을 풍성하게 성장시키는 힘",
-strength:"사람을 편안하게 하고 무언가를 돌보고 발전시키는 능력이 있습니다.",
-shadow:"다른 사람을 챙기느라 자신의 필요를 뒤로 미룰 수 있습니다.",
-love:"따뜻한 애정 표현과 안정적인 관계를 중요하게 생각합니다.",
-career:"디자인, 교육, 뷰티, 콘텐츠, 서비스처럼 사람에게 가치를 제공하는 분야와 연결될 수 있습니다.",
-growth:"타인을 돌보는 만큼 자신의 욕구와 에너지도 돌보는 것이 중요합니다."
+  roman:"III",
+  en:"THE EMPRESS",
+  ko:"여황제",
+  symbol:"❀",
+  keywords:"풍요 · 감각 · 돌봄 · 창조 · 성장",
+
+  essence:
+  "사람과 가능성을 돌보고 풍성하게 성장시키는 힘",
+
+  strength:
+  "주변을 편안하게 만들고 사람이나 아이디어를 돌보며 발전시키는 능력이 있습니다. 감각과 창조성도 중요한 강점이 될 수 있습니다.",
+
+  shadow:
+  "다른 사람을 챙기는 데 익숙해지면 정작 자신의 필요와 감정을 뒤로 미룰 수 있습니다.",
+
+  love:
+  "따뜻한 애정 표현과 안정감, 서로를 돌보는 관계를 중요하게 생각할 수 있습니다.",
+
+  career:
+  "디자인, 교육, 뷰티, 서비스, 콘텐츠처럼 사람에게 가치와 경험을 제공하는 분야와 연결될 수 있습니다.",
+
+  growth:
+  "다른 사람을 돌보는 만큼 자신의 욕구와 에너지를 충분히 돌보는 것이 중요합니다."
 },
 
 4:{
-roman:"IV",
-en:"THE EMPEROR",
-ko:"황제",
-symbol:"♜",
-keywords:"질서 · 책임 · 기준 · 리더십",
-essence:"혼란 속에서 구조와 방향을 만들어내는 힘",
-strength:"책임감이 강하고 목표를 현실적인 계획으로 만들어가는 능력이 있습니다.",
-shadow:"자신의 기준이 강해지면 예상하지 못한 변화에 스트레스를 받을 수 있습니다.",
-love:"신뢰와 약속을 중요하게 생각하며 안정적인 관계를 선호할 수 있습니다.",
-career:"경영, 관리, 행정, 조직 운영처럼 책임과 구조가 필요한 분야와 잘 맞습니다.",
-growth:"통제할 수 없는 것까지 통제하려 하지 않는 유연성이 중요합니다."
+  roman:"IV",
+  en:"THE EMPEROR",
+  ko:"황제",
+  symbol:"♜",
+  keywords:"질서 · 책임 · 안정 · 기준 · 리더십",
+
+  essence:
+  "혼란 속에서 기준과 구조를 세우고 안정적인 방향을 만드는 힘",
+
+  strength:
+  "책임감이 강하고 목표를 현실적인 계획으로 바꾸어 추진할 수 있습니다. 다른 사람이 의지할 수 있는 안정감을 주기도 합니다.",
+
+  shadow:
+  "자신의 기준이 지나치게 강해지면 예상하지 못한 변화나 다른 사람의 방식에 답답함을 느낄 수 있습니다.",
+
+  love:
+  "신뢰와 약속을 중요하게 생각하며 안정적으로 오래 이어지는 관계를 선호할 수 있습니다.",
+
+  career:
+  "경영, 관리, 행정, 조직 운영, 프로젝트 리딩처럼 책임과 구조가 필요한 분야와 잘 맞을 수 있습니다.",
+
+  growth:
+  "모든 것을 통제하려 하기보다 변화와 다른 사람의 방식을 받아들이는 유연성을 키우는 것이 중요합니다."
 },
 
 5:{
-roman:"V",
-en:"THE HIEROPHANT",
-ko:"교황",
-symbol:"♢",
-keywords:"가치 · 배움 · 신념 · 가르침",
-essence:"경험과 지식을 의미 있는 가치로 전달하는 힘",
-strength:"배운 것을 체계화하고 다른 사람에게 설명하거나 방향을 제시하는 능력이 있습니다.",
-shadow:"익숙한 기준이나 자신의 신념을 유일한 정답으로 생각하지 않도록 주의해야 합니다.",
-love:"가치관과 삶의 방향이 비슷한 사람에게 안정감을 느낄 수 있습니다.",
-career:"교육, 코칭, 상담, 조직문화처럼 지식과 가치를 전달하는 분야와 잘 맞습니다.",
-growth:"배운 것을 지키는 것뿐 아니라 새로운 관점을 받아들이는 것도 중요합니다."
+  roman:"V",
+  en:"THE HIEROPHANT",
+  ko:"교황",
+  symbol:"♢",
+  keywords:"가치 · 배움 · 신념 · 지식 · 가르침",
+
+  essence:
+  "경험과 지식을 의미 있는 가치로 정리해 다른 사람에게 전달하는 힘",
+
+  strength:
+  "배운 것을 체계적으로 정리하고 다른 사람에게 설명하거나 방향을 제시하는 능력이 있습니다.",
+
+  shadow:
+  "익숙한 기준이나 자신이 믿는 가치를 유일한 정답으로 생각하게 되면 새로운 관점을 받아들이기 어려워질 수 있습니다.",
+
+  love:
+  "단순한 호감뿐 아니라 가치관과 삶의 방향이 비슷한 사람에게 안정감을 느낄 가능성이 높습니다.",
+
+  career:
+  "교육, 코칭, 상담, 조직문화, 연구처럼 지식과 가치를 전달하는 분야와 연결될 수 있습니다.",
+
+  growth:
+  "이미 알고 있는 것을 지키는 것과 새로운 것을 배우는 것 사이의 균형이 중요합니다."
 },
 
 6:{
-roman:"VI",
-en:"THE LOVERS",
-ko:"연인",
-symbol:"♡",
-keywords:"관계 · 선택 · 조화 · 가치",
-essence:"사람과의 연결 속에서 자신의 진짜 선택을 발견하는 힘",
-strength:"사람을 이해하고 서로 다른 입장을 연결하는 공감 능력이 있습니다.",
-shadow:"다른 사람의 기대를 의식하다 자신의 선택을 미룰 수 있습니다.",
-love:"사랑과 관계가 삶에서 중요한 의미를 가질 수 있으며 깊은 정서적 연결을 원합니다.",
-career:"상담, 커뮤니케이션, 인사, 협업처럼 사람과 사람을 연결하는 일에서 강점이 나타날 수 있습니다.",
-growth:"상대에게 선택받는 것보다 자신이 무엇을 선택하는지 아는 것이 중요합니다."
+  roman:"VI",
+  en:"THE LOVERS",
+  ko:"연인",
+  symbol:"♡",
+  keywords:"관계 · 선택 · 사랑 · 조화 · 가치",
+
+  essence:
+  "사람과의 연결과 선택을 통해 자신이 진짜 중요하게 생각하는 것을 발견하는 힘",
+
+  strength:
+  "사람의 감정을 이해하고 서로 다른 입장을 연결하는 공감 능력이 있습니다. 관계 속에서 좋은 분위기를 만드는 힘도 있습니다.",
+
+  shadow:
+  "다른 사람의 기대를 의식하다 보면 자신의 선택을 미루거나 모두를 만족시키려 할 수 있습니다.",
+
+  love:
+  "사랑과 관계를 중요하게 생각하며 단순한 만남보다 마음과 가치가 연결되는 관계를 원할 수 있습니다.",
+
+  career:
+  "상담, 커뮤니케이션, 인사, 서비스, 협업처럼 사람과 사람을 연결하는 분야에서 강점을 보일 수 있습니다.",
+
+  growth:
+  "다른 사람에게 선택받는 것보다 내가 무엇을 선택하고 싶은지를 분명히 아는 것이 중요합니다."
 },
 
 7:{
-roman:"VII",
-en:"THE CHARIOT",
-ko:"전차",
-symbol:"➶",
-keywords:"목표 · 추진 · 도전 · 승리",
-essence:"목표를 향해 강하게 전진하는 추진력",
-strength:"목표가 명확할수록 집중력과 실행력이 크게 높아지는 사람입니다.",
-shadow:"목표에 집중하다 자신의 감정이나 주변 사람의 속도를 놓칠 수 있습니다.",
-love:"함께 성장하고 도전할 수 있는 역동적인 관계에 매력을 느낄 수 있습니다.",
-career:"영업, 프로젝트, 스포츠, 창업처럼 목표와 성과가 명확한 환경에서 강점을 보입니다.",
-growth:"얼마나 빠르게 가는가보다 어디를 향하고 있는지를 확인하는 것이 중요합니다."
+  roman:"VII",
+  en:"THE CHARIOT",
+  ko:"전차",
+  symbol:"➶",
+  keywords:"도전 · 추진 · 집중 · 목표 · 승리",
+
+  essence:
+  "자신이 원하는 목표를 향해 강하게 전진하는 추진력",
+
+  strength:
+  "목표가 명확할수록 집중력과 실행력이 크게 올라갑니다. 경쟁이나 도전 상황에서도 쉽게 물러서지 않는 힘이 있습니다.",
+
+  shadow:
+  "목표에 지나치게 집중하면 자신의 감정이나 주변 사람의 속도를 놓칠 수 있습니다.",
+
+  love:
+  "함께 성장하고 도전할 수 있는 역동적인 관계에 매력을 느낄 수 있습니다.",
+
+  career:
+  "영업, 프로젝트, 스포츠, 창업, 성과 중심 업무처럼 목표와 결과가 분명한 환경에서 강점을 발휘할 수 있습니다.",
+
+  growth:
+  "얼마나 빠르게 가는가만큼 내가 정말 원하는 방향으로 가고 있는지를 확인하는 것이 중요합니다."
 },
 
 8:{
-roman:"VIII",
-en:"STRENGTH",
-ko:"힘",
-symbol:"∞",
-keywords:"용기 · 인내 · 자제 · 내면의 힘",
-essence:"강압이 아니라 내면의 안정으로 상황을 다루는 힘",
-strength:"어려움 속에서도 쉽게 무너지지 않고 버텨내는 회복력과 인내심이 있습니다.",
-shadow:"강해야 한다는 생각 때문에 자신의 힘든 감정을 숨길 수 있습니다.",
-love:"상대를 이해하고 기다려주는 편이지만 자신의 한계를 명확하게 표현하는 것도 중요합니다.",
-career:"교육, 코칭, 리더십, 상담처럼 꾸준함과 사람에 대한 이해가 필요한 분야와 잘 맞습니다.",
-growth:"진짜 강함은 참는 것만이 아니라 자신의 약한 마음도 인정할 수 있는 데서 시작됩니다."
+  roman:"VIII",
+  en:"STRENGTH",
+  ko:"힘",
+  symbol:"∞",
+  keywords:"용기 · 인내 · 자제 · 회복 · 내면의 힘",
+
+  essence:
+  "강압적인 힘보다 내면의 안정과 인내로 상황을 다루는 힘",
+
+  strength:
+  "어려운 상황에서도 쉽게 무너지지 않고 버텨내는 회복력과 인내심이 있습니다. 감정을 다스리고 사람을 부드럽게 이끄는 힘도 가지고 있을 수 있습니다.",
+
+  shadow:
+  "강해야 한다는 생각이 커지면 힘든 감정을 숨기거나 혼자서 너무 오래 버티게 될 수 있습니다.",
+
+  love:
+  "상대를 이해하고 기다려주는 편이지만 자신의 한계와 원하는 것을 분명하게 표현하는 것도 중요합니다.",
+
+  career:
+  "교육, 코칭, 상담, 리더십, 장기 프로젝트처럼 꾸준함과 사람에 대한 이해가 필요한 분야와 잘 맞을 수 있습니다.",
+
+  growth:
+  "진짜 강함은 모든 것을 참는 것이 아니라 자신의 약한 마음까지 인정하고 필요한 순간 도움을 받을 수 있는 데서 시작됩니다."
 },
 
 9:{
-roman:"IX",
-en:"THE HERMIT",
-ko:"은둔자",
-symbol:"✧",
-keywords:"성찰 · 탐구 · 지혜 · 독립",
-essence:"자신의 경험을 깊은 이해와 지혜로 바꾸는 힘",
-strength:"한 가지 주제를 깊게 탐구하고 본질을 발견하는 능력이 있습니다.",
-shadow:"혼자 해결하려는 성향이 강해지면 주변 사람과 거리가 생길 수 있습니다.",
-love:"많은 관계보다 깊고 진실한 몇 사람과의 관계를 중요하게 생각합니다.",
-career:"연구, 전문직, 개발, 분석, 글쓰기처럼 전문성을 깊게 쌓는 분야와 잘 맞습니다.",
-growth:"혼자 발견한 지혜를 세상과 나누는 것이 다음 성장 단계가 될 수 있습니다."
+  roman:"IX",
+  en:"THE HERMIT",
+  ko:"은둔자",
+  symbol:"✧",
+  keywords:"성찰 · 탐구 · 지혜 · 독립 · 깊이",
+
+  essence:
+  "자신의 경험과 질문을 깊은 이해와 지혜로 바꾸는 힘",
+
+  strength:
+  "한 가지 주제를 깊게 탐구하고 본질을 발견하는 능력이 있습니다. 혼자 집중할 수 있는 환경에서 높은 전문성을 만들 수 있습니다.",
+
+  shadow:
+  "모든 문제를 혼자 해결하려는 경향이 강해지면 주변 사람과 거리가 생기거나 생각 속에 오래 머물 수 있습니다.",
+
+  love:
+  "많고 가벼운 관계보다 깊고 진실한 몇 사람과의 관계를 중요하게 생각할 수 있습니다.",
+
+  career:
+  "연구, 전문직, 개발, 분석, 글쓰기처럼 전문성을 깊게 쌓을 수 있는 분야와 잘 맞을 수 있습니다.",
+
+  growth:
+  "혼자 발견한 지혜를 자신만 간직하지 않고 사람들과 나누는 것이 다음 성장 단계가 될 수 있습니다."
 },
 
 10:{
-roman:"X",en:"WHEEL OF FORTUNE",ko:"운명의 수레바퀴",symbol:"◎",
-keywords:"변화 · 흐름 · 기회 · 전환",
-essence:"변화하는 흐름 속에서 새로운 기회를 발견하는 힘",
-strength:"환경 변화에 빠르게 적응하고 새로운 가능성을 발견할 수 있습니다.",
-shadow:"운이나 상황이 바뀌기를 기다리기보다 자신의 선택이 필요한 순간을 알아야 합니다.",
-love:"관계에서도 변화와 새로운 경험을 중요하게 느낄 수 있습니다.",
-career:"트렌드, 마케팅, 콘텐츠, 프로젝트형 업무처럼 변화가 빠른 분야와 연결될 수 있습니다.",
-growth:"변화를 두려워하지 않되 자신의 중심까지 흐름에 맡기지 않는 것이 중요합니다."
+  roman:"X",
+  en:"WHEEL OF FORTUNE",
+  ko:"운명의 수레바퀴",
+  symbol:"◎",
+  keywords:"변화 · 흐름 · 기회 · 전환 · 가능성",
+
+  essence:
+  "변화하는 흐름 속에서 새로운 가능성과 기회를 발견하는 힘",
+
+  strength:
+  "환경의 변화를 빠르게 알아차리고 새로운 흐름에 적응하는 능력이 있습니다. 예상하지 못했던 기회를 자신의 것으로 만드는 감각도 있을 수 있습니다.",
+
+  shadow:
+  "상황이 바뀌기를 기다리거나 순간적인 흐름에 지나치게 휩쓸릴 수 있습니다.",
+
+  love:
+  "관계에서도 새로운 경험과 변화가 중요하며 함께 성장하는 느낌이 있는 관계를 선호할 수 있습니다.",
+
+  career:
+  "트렌드, 마케팅, 콘텐츠, 프로젝트처럼 변화가 빠른 분야와 연결될 수 있습니다.",
+
+  growth:
+  "변화를 두려워하지 않으면서도 자신의 중심과 장기적인 방향을 잃지 않는 것이 중요합니다."
 },
 
 11:{
-roman:"XI",en:"JUSTICE",ko:"정의",symbol:"⚖",
-keywords:"균형 · 판단 · 책임 · 원칙",
-essence:"감정과 현실 사이에서 균형 있는 판단을 내리는 힘",
-strength:"객관적으로 상황을 바라보고 합리적인 기준을 세우는 능력이 있습니다.",
-shadow:"옳고 그름을 지나치게 따지면 자신과 타인에게 엄격해질 수 있습니다.",
-love:"서로 존중하고 책임을 나누는 공정한 관계를 중요하게 생각합니다.",
-career:"법률, 행정, 데이터, 평가, 기획처럼 판단력이 필요한 분야와 연결됩니다.",
-growth:"항상 완벽하게 옳은 선택이 존재하는 것은 아니라는 사실을 받아들이는 것이 중요합니다."
+  roman:"XI",
+  en:"JUSTICE",
+  ko:"정의",
+  symbol:"⚖",
+  keywords:"균형 · 판단 · 원칙 · 책임 · 공정",
+
+  essence:
+  "감정과 현실을 함께 바라보며 균형 있는 판단을 내리는 힘",
+
+  strength:
+  "상황을 객관적으로 바라보고 합리적인 기준을 세울 수 있습니다. 책임감과 공정성을 중요하게 생각합니다.",
+
+  shadow:
+  "옳고 그름에 지나치게 집중하면 자신이나 다른 사람에게 너무 엄격해질 수 있습니다.",
+
+  love:
+  "서로 존중하고 책임을 나누는 공정하고 안정적인 관계를 중요하게 생각합니다.",
+
+  career:
+  "법률, 행정, 데이터, 평가, 기획처럼 판단과 객관성이 필요한 분야와 연결될 수 있습니다.",
+
+  growth:
+  "모든 상황에 완벽하게 옳은 답이 존재하는 것은 아니라는 사실을 받아들이는 것이 중요합니다."
 },
 
 12:{
-roman:"XII",en:"THE HANGED MAN",ko:"매달린 사람",symbol:"◇",
-keywords:"관점 · 기다림 · 전환 · 수용",
-essence:"상황을 완전히 다른 시선에서 바라볼 수 있는 힘",
-strength:"고정관념을 벗어나 새로운 관점에서 문제를 볼 수 있습니다.",
-shadow:"생각과 기다림이 길어지면서 행동할 시점을 놓칠 수 있습니다.",
-love:"상대를 깊이 이해하려 하지만 지나친 희생은 피해야 합니다.",
-career:"창작, 상담, 연구, 전략처럼 새로운 관점이 필요한 분야와 연결될 수 있습니다.",
-growth:"내려놓음과 포기를 구분하는 것이 중요한 성장 주제입니다."
+  roman:"XII",
+  en:"THE HANGED MAN",
+  ko:"매달린 사람",
+  symbol:"◇",
+  keywords:"관점 · 기다림 · 전환 · 수용 · 내려놓음",
+
+  essence:
+  "익숙한 시선을 벗어나 상황을 완전히 다른 관점에서 바라보는 힘",
+
+  strength:
+  "다른 사람들이 당연하게 생각하는 것을 새로운 시각에서 바라보고 독특한 해결책을 발견할 수 있습니다.",
+
+  shadow:
+  "생각과 기다림이 길어지면 행동해야 할 시점을 놓치거나 자신만 희생하는 상황이 생길 수 있습니다.",
+
+  love:
+  "상대를 깊이 이해하려는 마음이 있지만 관계를 위해 자신을 지나치게 희생하지 않는 것이 중요합니다.",
+
+  career:
+  "창작, 상담, 연구, 전략처럼 새로운 관점과 사고가 필요한 분야와 연결될 수 있습니다.",
+
+  growth:
+  "내려놓는 것과 포기하는 것, 기다리는 것과 회피하는 것을 구분하는 것이 중요한 성장 주제입니다."
 },
 
 13:{
-roman:"XIII",en:"DEATH",ko:"죽음",symbol:"✦",
-keywords:"변화 · 정리 · 끝 · 재탄생",
-essence:"끝난 것을 정리하고 새로운 단계로 넘어가는 힘",
-strength:"필요한 순간 과감하게 변화하고 다시 시작할 수 있습니다.",
-shadow:"변화를 두려워해 끝난 것에 오래 머물거나 반대로 너무 빠르게 정리할 수 있습니다.",
-love:"관계를 통해 큰 내적 변화를 경험할 가능성이 있습니다.",
-career:"혁신, 리브랜딩, 변화관리처럼 기존의 것을 새롭게 만드는 분야와 연결됩니다.",
-growth:"끝을 실패가 아니라 새로운 시작을 위한 공간으로 바라보는 것이 중요합니다."
+  roman:"XIII",
+  en:"DEATH",
+  ko:"죽음",
+  symbol:"✦",
+  keywords:"끝 · 변화 · 정리 · 전환 · 재탄생",
+
+  essence:
+  "끝난 것을 정리하고 새로운 단계로 넘어가는 변화의 힘",
+
+  strength:
+  "필요한 순간 과감하게 정리하고 다시 시작할 수 있습니다. 큰 변화 이후에도 새로운 자신을 만들어낼 수 있는 힘이 있습니다.",
+
+  shadow:
+  "변화를 두려워해 이미 끝난 것에 오래 머물거나 반대로 불편함을 느끼자마자 너무 빠르게 관계나 일을 정리할 수 있습니다.",
+
+  love:
+  "관계를 통해 자신의 가치관이나 삶의 방향이 크게 변화하는 경험을 할 수 있습니다.",
+
+  career:
+  "혁신, 리브랜딩, 변화관리, 문제 해결처럼 기존의 것을 새롭게 만드는 분야와 연결될 수 있습니다.",
+
+  growth:
+  "끝을 실패로만 바라보지 않고 새로운 시작을 위한 공간이 생기는 과정으로 받아들이는 것이 중요합니다."
 },
 
 14:{
-roman:"XIV",en:"TEMPERANCE",ko:"절제",symbol:"△",
-keywords:"균형 · 조율 · 연결 · 치유",
-essence:"서로 다른 것을 자연스럽게 연결하고 균형을 만드는 힘",
-strength:"갈등을 조율하고 사람과 상황 사이에서 적절한 균형점을 찾을 수 있습니다.",
-shadow:"평화를 유지하기 위해 자신의 의견을 지나치게 줄일 수 있습니다.",
-love:"편안하고 안정적으로 서로를 성장시키는 관계를 선호합니다.",
-career:"상담, 서비스, 조정, 협업 중심의 업무와 연결될 수 있습니다.",
-growth:"타인을 위한 균형뿐 아니라 자신의 욕구까지 포함한 균형을 만드는 것이 중요합니다."
+  roman:"XIV",
+  en:"TEMPERANCE",
+  ko:"절제",
+  symbol:"△",
+  keywords:"조화 · 균형 · 연결 · 조율 · 치유",
+
+  essence:
+  "서로 다른 사람과 상황을 연결해 자연스러운 균형을 만들어내는 힘",
+
+  strength:
+  "갈등을 조율하고 서로 다른 입장 사이에서 적절한 균형점을 찾는 능력이 있습니다.",
+
+  shadow:
+  "평화를 유지하기 위해 자신의 의견과 감정을 지나치게 줄이거나 참게 될 수 있습니다.",
+
+  love:
+  "편안하고 안정적이며 서로를 천천히 성장시켜주는 관계를 선호할 수 있습니다.",
+
+  career:
+  "상담, 서비스, 조정, 협업, 교육처럼 사람과 사람 사이의 균형이 중요한 분야와 연결될 수 있습니다.",
+
+  growth:
+  "다른 사람을 위한 균형뿐 아니라 자신의 욕구까지 포함한 균형을 만드는 것이 중요합니다."
 },
 
 15:{
-roman:"XV",en:"THE DEVIL",ko:"악마",symbol:"♠",
-keywords:"욕망 · 매력 · 몰입 · 본능",
-essence:"자신이 원하는 것에 강하게 몰입할 수 있는 에너지",
-strength:"강한 집중력과 현실적인 욕구를 성취의 동력으로 사용할 수 있습니다.",
-shadow:"욕망이 집착으로 변하거나 익숙한 패턴에서 벗어나기 어려워질 수 있습니다.",
-love:"강렬한 끌림을 경험할 수 있지만 관계 속 자유와 경계가 중요합니다.",
-career:"비즈니스, 영업, 마케팅, 엔터테인먼트처럼 욕구와 심리를 읽는 분야와 연결될 수 있습니다.",
-growth:"무엇을 원하는지 아는 것과 그것에 지배당하는 것을 구분해야 합니다."
+  roman:"XV",
+  en:"THE DEVIL",
+  ko:"악마",
+  symbol:"♠",
+  keywords:"욕망 · 매력 · 몰입 · 본능 · 현실",
+
+  essence:
+  "자신이 원하는 것을 강하게 추구하고 현실적인 성취로 연결하는 에너지",
+
+  strength:
+  "강한 집중력과 욕구를 성취의 동력으로 사용할 수 있습니다. 사람의 욕망과 심리를 빠르게 읽어내는 감각도 있을 수 있습니다.",
+
+  shadow:
+  "욕망이 집착으로 바뀌거나 익숙한 관계와 행동 패턴에서 벗어나기 어려워질 수 있습니다.",
+
+  love:
+  "강렬한 끌림과 깊은 몰입을 경험할 수 있지만 관계 속에서도 자유와 건강한 경계를 유지하는 것이 중요합니다.",
+
+  career:
+  "비즈니스, 영업, 마케팅, 엔터테인먼트처럼 사람의 욕구와 현실적인 성과를 다루는 분야와 연결될 수 있습니다.",
+
+  growth:
+  "무엇을 원하는지 아는 것과 원하는 것에 지배당하는 것을 구분하는 것이 중요합니다."
 },
 
 16:{
-roman:"XVI",en:"THE TOWER",ko:"탑",symbol:"ϟ",
-keywords:"각성 · 해체 · 진실 · 재건",
-essence:"낡은 구조를 깨뜨리고 더 진실한 기반을 만드는 힘",
-strength:"위기 속에서도 핵심을 발견하고 다시 시작할 수 있습니다.",
-shadow:"갑작스러운 변화에 대한 두려움 때문에 익숙한 것에 집착할 수 있습니다.",
-love:"관계에서도 솔직함과 진실을 중요하게 생각합니다.",
-career:"혁신, 문제 해결, 위기관리처럼 변화를 만들어야 하는 환경과 연결됩니다.",
-growth:"무너지는 것을 실패로만 보지 않고 새로운 구조를 만드는 과정으로 바라보는 것이 중요합니다."
+  roman:"XVI",
+  en:"THE TOWER",
+  ko:"탑",
+  symbol:"ϟ",
+  keywords:"각성 · 변화 · 해체 · 진실 · 재건",
+
+  essence:
+  "더 이상 맞지 않는 구조를 깨뜨리고 새로운 기반을 만드는 힘",
+
+  strength:
+  "위기나 큰 변화 속에서도 문제의 핵심을 발견하고 다시 시작할 수 있는 힘이 있습니다.",
+
+  shadow:
+  "갑작스러운 변화에 대한 두려움 때문에 익숙하지만 더 이상 도움이 되지 않는 것에 집착할 수 있습니다.",
+
+  love:
+  "관계에서도 겉으로만 평화로운 것보다 솔직함과 진실을 중요하게 생각할 가능성이 높습니다.",
+
+  career:
+  "혁신, 문제 해결, 위기관리, 변화관리처럼 기존 구조를 새롭게 만들어야 하는 환경과 연결될 수 있습니다.",
+
+  growth:
+  "무너지는 것을 실패로만 보지 않고 더 단단한 구조를 만들기 위한 과정으로 바라보는 것이 중요합니다."
 },
 
 17:{
-roman:"XVII",en:"THE STAR",ko:"별",symbol:"☆",
-keywords:"희망 · 영감 · 꿈 · 진정성",
-essence:"자신의 가능성을 믿고 다른 사람에게도 희망을 전달하는 힘",
-strength:"미래를 긍정적으로 바라보고 사람들에게 새로운 가능성을 보여줄 수 있습니다.",
-shadow:"이상적인 미래만 바라보다 현실적인 행동을 놓칠 수 있습니다.",
-love:"서로의 꿈과 가능성을 응원해 주는 관계를 중요하게 생각합니다.",
-career:"예술, 콘텐츠, 브랜딩, 교육처럼 영감과 메시지를 전달하는 분야와 연결됩니다.",
-growth:"꿈을 현실로 만드는 작은 행동을 꾸준히 이어가는 것이 중요합니다."
+  roman:"XVII",
+  en:"THE STAR",
+  ko:"별",
+  symbol:"☆",
+  keywords:"희망 · 영감 · 가능성 · 꿈 · 진정성",
+
+  essence:
+  "자신의 가능성을 믿고 그 가능성을 다른 사람에게도 보여주는 힘",
+
+  strength:
+  "미래에 대한 희망과 이상을 가지고 있으며 자신의 진정성이나 창의적인 표현을 통해 다른 사람에게 영감을 줄 수 있습니다.",
+
+  shadow:
+  "이상적인 미래와 가능성에 집중하다 보면 현실적인 계획이나 구체적인 행동이 부족해질 수 있습니다.",
+
+  love:
+  "서로의 꿈과 가능성을 응원하고 각자의 개성을 존중하는 관계에서 큰 만족을 느낄 수 있습니다.",
+
+  career:
+  "예술, 콘텐츠, 브랜딩, 교육, 디자인처럼 영감과 메시지를 전달할 수 있는 분야와 연결될 수 있습니다.",
+
+  growth:
+  "꿈과 가능성을 현실로 연결하는 작고 구체적인 행동을 꾸준히 이어가는 것이 중요합니다."
 },
 
 18:{
-roman:"XVIII",en:"THE MOON",ko:"달",symbol:"☽",
-keywords:"감수성 · 상상 · 직관 · 무의식",
-essence:"보이지 않는 감정과 분위기를 섬세하게 느끼는 힘",
-strength:"풍부한 상상력과 감수성, 공감 능력이 있습니다.",
-shadow:"불확실한 상황에서 걱정과 상상이 실제보다 크게 자랄 수 있습니다.",
-love:"상대의 감정에 민감하며 깊은 정서적 교감을 원합니다.",
-career:"예술, 디자인, 영상, 음악, 심리처럼 감정과 이미지를 다루는 분야와 연결됩니다.",
-growth:"느낌과 사실을 구분하는 연습이 마음의 안정에 도움이 됩니다."
+  roman:"XVIII",
+  en:"THE MOON",
+  ko:"달",
+  symbol:"☽",
+  keywords:"감수성 · 상상 · 무의식 · 직관 · 불확실성",
+
+  essence:
+  "보이지 않는 감정과 분위기를 섬세하게 느끼고 상상으로 확장하는 힘",
+
+  strength:
+  "풍부한 상상력과 감수성, 공감 능력을 가지고 있을 수 있습니다. 말로 표현되지 않은 감정도 빠르게 알아차릴 수 있습니다.",
+
+  shadow:
+  "불확실한 상황에서는 걱정과 상상이 실제보다 크게 자라면서 마음이 흔들릴 수 있습니다.",
+
+  love:
+  "상대의 감정에 민감하며 깊은 정서적인 교감을 중요하게 생각합니다.",
+
+  career:
+  "예술, 디자인, 영상, 음악, 상담처럼 감정과 이미지, 상상력을 다루는 분야와 연결될 수 있습니다.",
+
+  growth:
+  "자신이 느끼는 감정과 실제로 확인된 사실을 구분하는 연습이 마음의 안정에 도움이 됩니다."
 },
 
 19:{
-roman:"XIX",en:"THE SUN",ko:"태양",symbol:"☀",
-keywords:"활력 · 자신감 · 표현 · 기쁨",
-essence:"자신의 존재와 에너지를 세상에 밝게 표현하는 힘",
-strength:"긍정적인 에너지와 솔직한 표현으로 주변에 활력을 줄 수 있습니다.",
-shadow:"항상 밝아야 한다는 부담이나 인정받고 싶은 마음이 커질 수 있습니다.",
-love:"솔직하고 따뜻하게 애정을 표현하는 관계를 선호합니다.",
-career:"교육, 방송, 콘텐츠, 리더십처럼 사람에게 에너지를 전달하는 분야와 연결됩니다.",
-growth:"빛나는 모습뿐 아니라 힘들고 조용한 자신의 모습도 인정하는 것이 중요합니다."
+  roman:"XIX",
+  en:"THE SUN",
+  ko:"태양",
+  symbol:"☀",
+  keywords:"활력 · 자신감 · 표현 · 기쁨 · 긍정",
+
+  essence:
+  "자신의 존재와 에너지를 세상에 밝게 표현하는 힘",
+
+  strength:
+  "솔직한 표현과 긍정적인 에너지로 주변 사람에게 활력을 줄 수 있습니다. 자신이 좋아하는 일을 할 때 특히 강한 에너지가 나타날 수 있습니다.",
+
+  shadow:
+  "항상 밝고 잘해야 한다는 부담을 느끼거나 다른 사람에게 인정받고 싶은 마음이 지나치게 커질 수 있습니다.",
+
+  love:
+  "솔직하고 따뜻하게 애정을 표현하며 함께 즐겁게 성장할 수 있는 관계를 선호할 수 있습니다.",
+
+  career:
+  "교육, 방송, 콘텐츠, 리더십, 서비스처럼 사람에게 에너지와 메시지를 전달하는 분야와 연결될 수 있습니다.",
+
+  growth:
+  "빛나는 모습뿐 아니라 힘들고 조용한 자신의 모습도 자연스럽게 인정하는 것이 중요합니다."
 },
 
 20:{
-roman:"XX",en:"JUDGEMENT",ko:"심판",symbol:"♬",
-keywords:"각성 · 소명 · 결단 · 새로운 단계",
-essence:"과거의 경험에서 의미를 발견하고 새로운 방향을 선택하는 힘",
-strength:"자신과 타인의 경험 속에서 중요한 의미와 가능성을 발견할 수 있습니다.",
-shadow:"과거의 선택을 반복해서 평가하거나 후회하는 데 머물 수 있습니다.",
-love:"서로의 성장과 변화에 의미를 주는 관계를 중요하게 생각합니다.",
-career:"교육, 코칭, 리더십, 사회적 프로젝트처럼 변화와 방향을 만드는 분야와 연결됩니다.",
-growth:"과거를 심판하기보다 그 경험이 지금의 자신에게 무엇을 가르쳤는지 바라보는 것이 중요합니다."
+  roman:"XX",
+  en:"JUDGEMENT",
+  ko:"심판",
+  symbol:"♬",
+  keywords:"각성 · 소명 · 결단 · 성찰 · 새로운 단계",
+
+  essence:
+  "과거의 경험에서 의미를 발견하고 새로운 방향을 선택하는 힘",
+
+  strength:
+  "자신과 다른 사람의 경험 속에서 중요한 의미를 발견하고 새로운 가능성을 깨닫게 하는 힘이 있습니다.",
+
+  shadow:
+  "과거의 선택을 반복해서 평가하거나 후회하면서 스스로를 지나치게 판단할 수 있습니다.",
+
+  love:
+  "단순히 즐거운 관계뿐 아니라 서로에게 성장과 변화의 의미를 줄 수 있는 관계를 중요하게 생각할 수 있습니다.",
+
+  career:
+  "교육, 코칭, 상담, 리더십, 사회적 프로젝트처럼 사람의 변화와 방향에 영향을 주는 분야와 연결될 수 있습니다.",
+
+  growth:
+  "과거를 심판하는 것보다 그 경험이 지금의 자신에게 무엇을 가르쳤는지를 발견하는 것이 중요합니다."
 },
 
 21:{
-roman:"XXI",en:"THE WORLD",ko:"세계",symbol:"◯",
-keywords:"완성 · 확장 · 통합 · 성취",
-essence:"다양한 경험을 연결해 하나의 큰 그림으로 완성하는 힘",
-strength:"넓은 시야를 가지고 여러 요소를 통합하는 능력이 있습니다.",
-shadow:"완벽하게 준비해야 한다는 생각 때문에 다음 시작이 늦어질 수 있습니다.",
-love:"서로 독립적이면서 함께 성장하는 성숙한 관계를 선호합니다.",
-career:"글로벌 업무, 프로젝트 총괄, 기획처럼 다양한 요소를 연결하는 분야와 잘 맞습니다.",
-growth:"완성된 것을 인정하고 다시 새로운 시작으로 넘어갈 수 있는 용기가 중요합니다."
+  roman:"XXI",
+  en:"THE WORLD",
+  ko:"세계",
+  symbol:"◯",
+  keywords:"완성 · 확장 · 통합 · 성취 · 연결",
+
+  essence:
+  "다양한 경험과 능력을 연결해 하나의 큰 그림으로 완성하는 힘",
+
+  strength:
+  "넓은 시야를 가지고 여러 요소를 하나로 통합할 수 있습니다. 하나의 과정을 완성하고 결과를 만들어내는 힘도 있습니다.",
+
+  shadow:
+  "완벽하게 준비되거나 완성되어야 다음 단계로 갈 수 있다고 생각하면서 새로운 시작을 미룰 수 있습니다.",
+
+  love:
+  "서로 독립적인 삶을 존중하면서도 함께 성장할 수 있는 성숙한 관계를 선호할 수 있습니다.",
+
+  career:
+  "글로벌 업무, 프로젝트 총괄, 기획, 네트워크처럼 다양한 요소를 연결하고 통합하는 분야와 잘 맞을 수 있습니다.",
+
+  growth:
+  "이미 이룬 것을 충분히 인정하고 새로운 시작으로 다시 넘어갈 수 있는 용기가 중요합니다."
 },
 
 22:{
-roman:"0 / XXII",en:"THE FOOL",ko:"바보",symbol:"☁",
-keywords:"자유 · 모험 · 가능성 · 시작",
-essence:"정해진 길을 벗어나 새로운 가능성을 경험하는 힘",
-strength:"새로운 환경에 뛰어들 수 있는 용기와 유연성이 있습니다.",
-shadow:"흥미가 빠르게 바뀌거나 계획 없이 움직여 마무리가 어려워질 수 있습니다.",
-love:"자유롭고 편안하면서 서로의 개성을 존중하는 관계를 선호합니다.",
-career:"창작, 여행, 스타트업, 프리랜서처럼 새로운 경험이 많은 환경과 연결됩니다.",
-growth:"자유와 책임을 함께 가져가는 것이 중요한 성장 주제입니다."
+  roman:"0 · XXII",
+  en:"THE FOOL",
+  ko:"바보",
+  symbol:"☁",
+  keywords:"자유 · 모험 · 가능성 · 순수 · 새로운 시작",
+
+  essence:
+  "정해진 길을 벗어나 새로운 가능성을 직접 경험하는 힘",
+
+  strength:
+  "새로운 환경과 경험에 뛰어들 수 있는 용기와 유연성이 있습니다. 기존의 틀에 얽매이지 않는 독특한 시각도 강점입니다.",
+
+  shadow:
+  "흥미가 빠르게 바뀌거나 충분한 계획 없이 움직이면 시작한 일을 마무리하기 어려워질 수 있습니다.",
+
+  love:
+  "서로를 통제하기보다 각자의 개성과 자유를 존중하는 편안한 관계를 선호할 수 있습니다.",
+
+  career:
+  "창작, 여행, 스타트업, 프리랜서, 새로운 프로젝트처럼 다양한 경험과 자유도가 높은 환경과 연결될 수 있습니다.",
+
+  growth:
+  "자유롭게 선택하면서도 자신이 선택한 것에 대한 책임을 함께 가져가는 것이 중요한 성장 주제입니다."
 }
 
 };
 
 
-/* ==============================
-   ★ 핵심: 사용자가 제공한 계산법
-============================== */
+/* ==========================================
+   숫자 합
+========================================== */
 
-function digitSum(n){
- return String(n)
- .split("")
- .reduce((sum,d)=>sum+Number(d),0);
+function digitSum(number){
+
+  return String(number)
+    .split("")
+    .reduce(
+      (sum,digit) =>
+        sum + Number(digit),
+      0
+    );
+
 }
 
 
-function calculateBirthCards(year,month,day){
+/* ==========================================
+   ★ 탄생 카드 계산
+========================================== */
 
- /*
-  1992 → 19 + 92
-  2004 → 20 + 04
- */
+function calculateBirthCards(
+  year,
+  month,
+  day
+){
 
- const yearString=
- String(year).padStart(4,"0");
-
- const yy1=
- Number(yearString.slice(0,2));
-
- const yy2=
- Number(yearString.slice(2,4));
-
- /*
-  MM + DD + YY + YY
- */
-
- const initial=
- month + day + yy1 + yy2;
-
- const steps=[];
-
- steps.push(
- `${String(month).padStart(2,"0")} + `+
- `${String(day).padStart(2,"0")} + `+
- `${yearString.slice(0,2)} + `+
- `${yearString.slice(2,4)} = ${initial}`
- );
+  const yearString =
+    String(year).padStart(4,"0");
 
 
- let first;
+  /*
+    2004 → 20 / 04
+    1991 → 19 / 91
+  */
+
+  const yearFront =
+    Number(
+      yearString.slice(0,2)
+    );
+
+  const yearBack =
+    Number(
+      yearString.slice(2,4)
+    );
 
 
- /*
-  1자리
- */
+  /*
+    MM + DD + YY + YY
 
- if(initial<10){
+    2004.03.08
 
-  first=initial;
+    03 + 08 + 20 + 04
+    = 35
+  */
 
- }
+  const initial =
+    month +
+    day +
+    yearFront +
+    yearBack;
 
 
- /*
-  2자리
-  예: 88 → 8+8 = 16
- */
+  const steps = [];
 
- else if(initial<100){
-
-  first=digitSum(initial);
 
   steps.push(
-   String(initial)
-   .split("")
-   .join(" + ")
-   +" = "+first
+
+    `${String(month).padStart(2,"0")} + ` +
+
+    `${String(day).padStart(2,"0")} + ` +
+
+    `${yearString.slice(0,2)} + ` +
+
+    `${yearString.slice(2,4)} = ` +
+
+    `${initial}`
+
   );
 
- }
+
+  let firstCard;
 
 
- /*
-  3자리
-  예: 144 → 14+4 = 18
- */
+  /* ======================================
+     CASE 1
+     처음부터 22 이하
+  ====================================== */
 
- else{
+  if(
+    initial <= 22
+  ){
 
-  const str=String(initial);
-
-  const firstTwo=
-  Number(str.slice(0,2));
-
-  const last=
-  Number(str.slice(2));
-
-  first=
-  firstTwo+last;
-
-  steps.push(
-   `${firstTwo} + ${last} = ${first}`
-  );
-
- }
-
-
- /*
-  첫 번째 카드가 22보다 크면
-  한 번 더 축약
- */
-
- while(first>22){
-
-  const old=first;
-
-  first=digitSum(first);
-
-  steps.push(
-   String(old)
-   .split("")
-   .join(" + ")
-   +" = "+first
-  );
-
- }
-
-
- /*
-  두 번째 카드
-  첫 카드가 한 자리면 동일 카드
- */
-
- let second=first;
-
- if(first>=10){
-
-  second=digitSum(first);
-
-  steps.push(
-   String(first)
-   .split("")
-   .join(" + ")
-   +" = "+second
-  );
-
- }
-
-
- /*
-  이미지에 나온 특수 규칙:
-  첫 카드 + 9를 했을 때
-  다시 같은 한자리수가 되는 경우
-  숨은 두 번째 카드 후보 표시
-
-  예: 8 → 8+9=17 → 1+7=8
- */
-
- let hidden=null;
-
- if(first<10){
-
-  const candidate=first+9;
-
-  if(candidate<=22 &&
-     digitSum(candidate)===first){
-
-   hidden=candidate;
+    firstCard =
+      initial;
 
   }
 
- }
+
+  /* ======================================
+     CASE 2
+     두 자리
+
+     35 → 3 + 5 = 8
+     88 → 8 + 8 = 16
+  ====================================== */
+
+  else if(
+    initial < 100
+  ){
+
+    const firstDigit =
+      Number(
+        String(initial)[0]
+      );
+
+    const secondDigit =
+      Number(
+        String(initial)[1]
+      );
 
 
- return{
-  initial,
-  first,
-  second,
-  hidden,
-  steps,
-  yy1,
-  yy2
- };
+    firstCard =
+      firstDigit +
+      secondDigit;
+
+
+    steps.push(
+
+      `${firstDigit} + ` +
+      `${secondDigit} = ` +
+      `${firstCard}`
+
+    );
+
+  }
+
+
+  /* ======================================
+     CASE 3
+     세 자리
+
+     128 → 12 + 8 = 20
+     144 → 14 + 4 = 18
+  ====================================== */
+
+  else{
+
+    const initialString =
+      String(initial);
+
+
+    const front =
+      Number(
+        initialString.slice(0,-1)
+      );
+
+
+    const back =
+      Number(
+        initialString.slice(-1)
+      );
+
+
+    firstCard =
+      front + back;
+
+
+    steps.push(
+
+      `${front} + ` +
+      `${back} = ` +
+      `${firstCard}`
+
+    );
+
+  }
+
+
+  /*
+    혹시 계산 결과가
+    22를 넘으면 다시 축약
+  */
+
+  while(
+    firstCard > 22
+  ){
+
+    const old =
+      firstCard;
+
+
+    firstCard =
+      digitSum(
+        firstCard
+      );
+
+
+    steps.push(
+
+      `${String(old)
+        .split("")
+        .join(" + ")} = ` +
+
+      `${firstCard}`
+
+    );
+
+  }
+
+
+  /* ======================================
+     두 번째 연결 카드
+  ====================================== */
+
+  let secondCard;
+
+
+  /*
+    첫 카드가 10~22라면
+
+    20 → 2
+    18 → 9
+    16 → 7
+    17 → 8
+  */
+
+  if(
+    firstCard >= 10
+  ){
+
+    secondCard =
+      digitSum(
+        firstCard
+      );
+
+
+    steps.push(
+
+      `${String(firstCard)
+        .split("")
+        .join(" + ")} = ` +
+
+      `${secondCard}`
+
+    );
+
+  }
+
+
+  /*
+    첫 카드가 이미 한 자리라면
+
+    같은 카드를 반복하지 않고
+    +9 관계의 카드를 찾음.
+
+    8 → 17
+    7 → 16
+    6 → 15
+    5 → 14
+    4 → 13
+    3 → 12
+    2 → 11
+    1 → 10
+  */
+
+  else{
+
+    const connected =
+      firstCard + 9;
+
+
+    if(
+      connected <= 22 &&
+      digitSum(connected) === firstCard
+    ){
+
+      secondCard =
+        connected;
+
+
+      steps.push(
+
+        `${firstCard} + 9 = ${secondCard}`
+
+      );
+
+
+      steps.push(
+
+        `${String(secondCard)
+          .split("")
+          .join(" + ")} = ` +
+
+        `${firstCard}`
+
+      );
+
+    }
+
+    else{
+
+      secondCard =
+        firstCard;
+
+    }
+
+  }
+
+
+  return {
+
+    initial,
+    first:firstCard,
+    second:secondCard,
+    steps
+
+  };
 
 }
 
 
-/* ==============================
-   RESULT
-============================== */
+/* ==========================================
+   결과 시작
+========================================== */
 
 function startReading(){
 
- const birth=getBirthDate();
-
- if(!birth)return;
-
- const name=
- document.getElementById("name")
- .value.trim()||"당신";
-
- const result=
- calculateBirthCards(
- birth.y,
- birth.m,
- birth.d
- );
-
- const card1=cards[result.first];
- const card2=cards[result.second];
-
- if(!card1||!card2){
-  alert("카드 계산 중 오류가 발생했습니다.");
-  return;
- }
-
- document.getElementById("start")
- .style.display="none";
-
- document.getElementById("loading")
- .style.display="block";
-
- window.scrollTo({top:0});
+  const birth =
+    getBirthDate();
 
 
- setTimeout(()=>{
-
- document.getElementById("loading")
- .style.display="none";
-
- document.getElementById("result")
- .style.display="block";
+  if(!birth){
+    return;
+  }
 
 
- const dateText=
- `${birth.y}.${String(birth.m).padStart(2,"0")}.${String(birth.d).padStart(2,"0")}`;
+  const name =
+    document
+      .getElementById("name")
+      .value
+      .trim()
+      ||
+      "당신";
 
 
- document.getElementById("birthDisplay")
- .textContent=
- (calendarType==="solar"?"양력 ":"음력 ")
- +dateText
- +(calendarType==="lunar"
- ?(isLeapMonth?" · 윤달":" · 평달")
- :"");
+  const result =
+    calculateBirthCards(
+
+      birth.year,
+      birth.month,
+      birth.day
+
+    );
 
 
- document.getElementById("math")
- .innerHTML=
- result.steps
- .map((s,i)=>
- i===0?s:
- `<span class="arrow">↓</span>${s}`
- )
- .join("");
+  const firstCard =
+    cards[
+      result.first
+    ];
 
 
- document.getElementById("resultNumbers")
- .textContent=
- `FIRST ${result.first} · SECOND ${result.second}`;
+  const secondCard =
+    cards[
+      result.second
+    ];
 
 
- document.getElementById("resultTitle")
- .textContent=
- `${name}님의 두 장의 탄생 카드`;
+  if(
+    !firstCard ||
+    !secondCard
+  ){
+
+    alert(
+      "탄생 카드를 계산하는 중 문제가 발생했습니다."
+    );
+
+    return;
+  }
 
 
- fillCard(1,card1);
- fillCard(2,card2);
+  document
+    .getElementById("start")
+    .style.display =
+    "none";
 
- createReport(
- name,
- card1,
- card2,
- result
- );
 
- window.scrollTo({top:0});
+  document
+    .getElementById("loading")
+    .style.display =
+    "block";
 
- },1800);
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+
+  setTimeout(
+    function(){
+
+
+      document
+        .getElementById("loading")
+        .style.display =
+        "none";
+
+
+      document
+        .getElementById("result")
+        .style.display =
+        "block";
+
+
+      const dateText =
+
+        `${birth.year}.` +
+
+        `${String(birth.month)
+          .padStart(2,"0")}.` +
+
+        `${String(birth.day)
+          .padStart(2,"0")}`;
+
+
+      document
+        .getElementById("birthDisplay")
+        .textContent =
+
+        (
+          calendarType === "solar"
+          ?
+          "양력 "
+          :
+          "음력 "
+        )
+
+        +
+
+        dateText
+
+        +
+
+        (
+          calendarType === "lunar"
+
+          ?
+
+          (
+            isLeapMonth
+            ?
+            " · 윤달"
+            :
+            " · 평달"
+          )
+
+          :
+
+          ""
+        );
+
+
+      /* 계산 과정 */
+
+      document
+        .getElementById("math")
+        .innerHTML =
+
+        result.steps
+          .map(
+            function(step,index){
+
+              if(
+                index === 0
+              ){
+
+                return step;
+
+              }
+
+
+              return (
+
+                `<span class="arrow">↓</span>` +
+                step
+
+              );
+
+            }
+          )
+          .join("");
+
+
+      /* 숫자 */
+
+      document
+        .getElementById("resultNumbers")
+        .textContent =
+
+        `BIRTH ARCANA · ${result.first} / ${result.second}`;
+
+
+      /* 제목 */
+
+      document
+        .getElementById("resultTitle")
+        .textContent =
+
+        `${name}님의 탄생 카드`;
+
+
+      fillCard(
+        1,
+        firstCard
+      );
+
+
+      fillCard(
+        2,
+        secondCard
+      );
+
+
+      createReport(
+        name,
+        firstCard,
+        secondCard,
+        result
+      );
+
+
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+
+
+    },
+    1600
+  );
 
 }
 
 
-function fillCard(position,card){
+/* ==========================================
+   카드 출력
+========================================== */
 
- document.getElementById("roman"+position)
- .textContent=card.roman;
+function fillCard(
+  position,
+  card
+){
 
- document.getElementById("symbol"+position)
- .textContent=card.symbol;
+  document
+    .getElementById(
+      "roman" + position
+    )
+    .textContent =
+    card.roman;
 
- document.getElementById("en"+position)
- .textContent=card.en;
 
- document.getElementById("ko"+position)
- .textContent=card.ko;
+  document
+    .getElementById(
+      "symbol" + position
+    )
+    .textContent =
+    card.symbol;
 
- document.getElementById("keywords"+position)
- .textContent=card.keywords;
+
+  document
+    .getElementById(
+      "en" + position
+    )
+    .textContent =
+    card.en;
+
+
+  document
+    .getElementById(
+      "ko" + position
+    )
+    .textContent =
+    card.ko;
+
+
+  document
+    .getElementById(
+      "keywords" + position
+    )
+    .textContent =
+    card.keywords;
+
 }
 
 
-/* ==============================
+/* ==========================================
    상세 리포트
-============================== */
+========================================== */
 
-function createReport(name,a,b,result){
+function createReport(
+  name,
+  first,
+  second,
+  result
+){
 
- const same=
- result.first===result.second;
+  const data = [
 
- const data=[
+  [
+    "01",
+    "나를 대표하는 핵심 에너지",
 
- ["01","나를 대표하는 핵심 에너지",
- `${name}님의 첫 번째 탄생 카드는 ${a.ko}입니다.
+`${name}님의 탄생 카드 흐름에서 먼저 나타나는 숫자는 ${result.first}, ${first.ko}입니다.
 
-${a.ko}의 핵심은 ‘${a.essence}’입니다.
+${first.ko}의 핵심은 ‘${first.essence}’입니다.
 
-이 카드는 삶에서 비교적 크게 드러나는 태도와 반복되는 주제를 상징합니다. ${a.strength}
+${first.strength}
 
-따라서 ${name}님은 중요한 순간에 ${a.keywords}과 관련된 방식으로 상황을 해결하거나 자신의 가능성을 드러낼 수 있습니다.`],
+이 카드는 당신을 하나의 성격으로 규정하는 것이 아니라 삶에서 반복적으로 사용하게 되는 에너지와 태도를 보여주는 상징으로 볼 수 있습니다.
 
+특히 중요한 선택이나 새로운 상황을 만났을 때 ${first.keywords}과 관련된 모습이 자연스럽게 나타날 수 있습니다.`
+  ],
 
- ["02","내면에 숨어 있는 나",
- same
- ?`두 번째 카드 역시 ${b.ko}입니다.
 
-두 카드가 같은 숫자로 만나는 경우에는 ${b.ko}의 주제가 겉과 내면에서 모두 강하게 반복된다고 해석해볼 수 있습니다.
+  [
+    "02",
+    "나와 연결된 또 하나의 카드",
 
-자신이 자연스럽게 생각하는 방식과 실제 행동 사이의 방향이 비교적 분명할 수 있는 반면, ${b.ko}의 장점과 그림자 역시 강하게 경험할 수 있습니다.`
- :`두 번째 탄생 카드는 ${b.ko}입니다.
+`${first.ko}와 연결되는 두 번째 카드는 ${result.second}, ${second.ko}입니다.
 
-첫 번째 카드가 외부에서 크게 나타나는 삶의 테마라면, 두 번째 카드는 그 행동을 움직이는 보다 근원적인 방향을 살펴보는 카드입니다.
+${second.ko}가 가진 핵심 에너지는 ‘${second.essence}’입니다.
 
-${b.essence}이 당신의 중요한 내적 동력이 될 수 있습니다.`],
+첫 번째 카드와 두 번째 카드는 완전히 별개의 성격을 의미하기보다 하나의 숫자 흐름 안에서 연결된 두 가지 상징으로 바라볼 수 있습니다.
 
+따라서 ${first.ko}의 모습이 강하게 나타나는 순간에도 그 안에는 ${second.ko}가 상징하는 ${second.keywords}의 에너지가 함께 움직일 수 있습니다.`
+  ],
 
- ["03","내가 가진 강점",
- `첫 번째 카드 ${a.ko}는 이렇게 말합니다.
 
-${a.strength}
+  [
+    "03",
+    "다른 사람이 보는 나",
 
-그리고 ${b.ko}의 힘도 함께 작동합니다.
+`처음 만나는 사람은 당신에게서 ${first.ko}의 특징을 먼저 발견할 가능성이 있습니다.
 
-${b.strength}
+${first.strength}
 
-따라서 두 카드의 장점이 균형 있게 작동할 때 자신만의 독특한 강점을 만들 수 있습니다.`],
+하지만 관계가 깊어질수록 처음 보이는 모습만으로는 설명되지 않는 부분이 나타날 수 있습니다.
 
+그 부분을 이해하는 또 하나의 열쇠가 ${second.ko}입니다.
 
- ["04","나의 그림자와 약점",
- `강점이 지나치게 사용되면 그림자가 되기도 합니다.
+당신은 겉으로 보이는 모습보다 훨씬 다양한 내면을 가지고 있으며 상황과 관계에 따라 두 카드의 에너지를 다르게 사용할 수 있습니다.`
+  ],
 
-${a.ko}의 그림자는 다음과 연결될 수 있습니다.
 
-${a.shadow}
+  [
+    "04",
+    "아무도 모르는 내면",
 
-또한 내면의 ${b.ko}는 이런 부분을 조심할 필요가 있습니다.
+`겉으로 드러나는 행동과 마음속에서 실제로 원하는 것이 항상 같지는 않습니다.
 
-${b.shadow}
+${second.ko}의 핵심은 ${second.essence}입니다.
 
-중요한 것은 이런 모습을 없애는 것이 아니라 자신이 언제 이 패턴으로 들어가는지 알아차리는 것입니다.`],
+때문에 다른 사람에게는 ${first.ko}처럼 보이더라도 혼자 있을 때에는 ${second.ko}가 상징하는 가치와 욕구에 대해 더 깊게 생각할 수 있습니다.
 
+이 두 모습을 서로 모순이라고 생각하기보다 모두 자신의 일부로 인정하는 것이 중요합니다.`
+  ],
 
- ["05","인간관계 속의 나",
- `${a.ko}의 에너지를 가진 사람은 관계에서도 자신의 고유한 방식이 나타납니다.
 
-${a.love}
+  [
+    "05",
+    "내가 가진 가장 큰 강점",
 
-동시에 내면에는 ${b.ko}의 욕구가 있기 때문에 관계에서 ${b.keywords}의 가치 역시 중요하게 느껴질 수 있습니다.
+`${first.ko}의 중요한 강점은 다음과 같습니다.
 
-좋은 관계는 어느 한쪽의 모습만 요구하지 않고 두 가지 모습을 모두 편안하게 표현할 수 있게 해주는 관계입니다.`],
+${first.strength}
 
+여기에 ${second.ko}의 힘도 함께 더해집니다.
 
- ["06","연애할 때의 나",
- `${a.love}
+${second.strength}
 
-하지만 가까운 관계일수록 ${b.ko}의 내면적인 성향도 더욱 분명하게 나타날 수 있습니다.
+따라서 당신만의 강점은 한 카드에만 있는 것이 아니라 두 에너지가 만나는 지점에서 더욱 분명하게 나타날 수 있습니다.
 
-${b.love}
+자신이 특별히 힘을 많이 들이지 않아도 자연스럽게 잘하는 행동을 관찰해보세요. 그 안에 두 카드의 공통점이 숨어 있을 가능성이 있습니다.`
+  ],
 
-따라서 처음 사랑에 빠질 때의 모습과 관계가 깊어진 뒤의 모습 사이에 차이가 있을 수도 있습니다.`],
 
+  [
+    "06",
+    "나의 그림자와 약점",
 
- ["07","갈등이 생겼을 때",
- `갈등 상황에서는 평소의 강점이 지나치게 사용되기 쉽습니다.
+`모든 카드의 에너지에는 강점과 그림자가 함께 존재합니다.
 
-${a.shadow}
+${first.ko}의 힘이 지나치게 사용되면 이런 모습이 나타날 수 있습니다.
 
-특히 감정적으로 지쳤을 때에는 ${b.shadow}
+${first.shadow}
 
-갈등의 순간에는 “누가 맞는가?”보다 지금 어떤 욕구가 충족되지 않았는지 살펴보는 것이 도움이 됩니다.`],
+그리고 ${second.ko}의 그림자는 다음과 연결될 수 있습니다.
 
+${second.shadow}
 
- ["08","재능과 잠재력",
- `${a.essence}은 당신의 중요한 재능 중 하나가 될 수 있습니다.
+중요한 것은 이런 모습을 없애는 것이 아닙니다.
 
-여기에 ${b.ko}의 ‘${b.keywords}’ 에너지가 더해집니다.
+내가 언제 이 패턴으로 들어가는지 알아차릴 수 있다면 같은 성향을 훨씬 건강한 방식으로 사용할 수 있습니다.`
+  ],
 
-한 가지 카드만으로 자신을 규정하기보다 두 카드가 만나는 지점을 찾아보세요. 그 교차점에 다른 사람과 구별되는 자신만의 능력이 숨어 있을 가능성이 있습니다.`],
 
+  [
+    "07",
+    "인간관계 속의 나",
 
- ["09","직업과 진로",
- `${a.ko}의 직업적 방향을 보면,
+`사람들과 관계를 맺을 때도 두 카드의 특징이 자연스럽게 나타날 수 있습니다.
 
-${a.career}
+${first.love}
 
-내면의 ${b.ko}는 다음과 같은 방향도 함께 가지고 있습니다.
+동시에 가까운 관계일수록 ${second.ko}의 욕구도 더욱 중요해질 수 있습니다.
 
-${b.career}
+${second.love}
 
-따라서 직업을 선택할 때 단순히 잘할 수 있는 일뿐 아니라 자신의 두 가지 에너지를 함께 사용할 수 있는 환경인지 살펴보는 것이 좋습니다.`],
+따라서 나에게 좋은 관계는 어느 한 가지 모습만 요구하는 관계보다 서로 다른 모습을 편안하게 보여줄 수 있는 관계일 가능성이 높습니다.`
+  ],
 
 
- ["10","성장해야 할 방향",
- `${a.growth}
+  [
+    "08",
+    "연애할 때의 나",
 
-그리고 ${b.ko}는 당신에게 또 하나의 성장 방향을 보여줍니다.
+`${first.ko}의 관점에서 보면 연애에서 다음과 같은 모습을 보일 수 있습니다.
 
-${b.growth}
+${first.love}
 
-두 카드의 목적은 어떤 사람이 되어야 한다고 정답을 주는 것이 아니라 자신의 강점을 더 자유롭게 사용할 수 있도록 돕는 데 있습니다.`],
+하지만 관계가 깊어지면 ${second.ko}의 특징도 더욱 분명하게 나타날 수 있습니다.
 
+${second.love}
 
- ["11","두 카드의 조합",
- same
- ?`${a.ko} + ${b.ko}.
+처음 누군가에게 끌릴 때의 모습과 실제로 깊은 관계를 만들어갈 때의 모습이 조금 다를 수도 있습니다.
 
-같은 카드가 두 번 나타났습니다.
+좋은 관계는 그 두 모습을 모두 이해하고 존중할 수 있는 관계입니다.`
+  ],
 
-이는 하나의 상징적 테마가 삶에서 비교적 강하게 반복되는 조합으로 볼 수 있습니다.
 
-${a.keywords}의 장점을 충분히 발전시키는 동시에 그 에너지가 지나치게 강해질 때 나타나는 그림자를 알아차리는 것이 중요한 포인트입니다.`
- :`${a.ko} + ${b.ko}.
+  [
+    "09",
+    "갈등이 생겼을 때",
 
-당신의 첫 번째 카드는 ‘${a.essence}’을 이야기하고,
-두 번째 카드는 ‘${b.essence}’을 이야기합니다.
+`갈등 상황에서는 평소 강점으로 사용하던 성향이 지나치게 강해질 수 있습니다.
 
-겉으로는 ${a.ko}처럼 행동하면서도 마음 깊은 곳에서는 ${b.ko}가 원하는 방향을 찾고 있을 수 있습니다.
+${first.shadow}
 
-두 카드가 서로 다른 것처럼 느껴질수록 어느 하나를 버리는 것보다 두 모습을 함께 사용할 방법을 찾는 것이 중요합니다.`]
+또한 마음이 지쳐 있을 때에는 ${second.ko}의 그림자인 다음 모습도 나타날 수 있습니다.
 
- ];
+${second.shadow}
 
+갈등이 생겼을 때 바로 누가 맞고 틀린지를 결정하기보다 “지금 내가 실제로 원하는 것은 무엇인가?”를 먼저 살펴보는 것이 도움이 될 수 있습니다.`
+  ],
 
- /*
-  숨은 카드가 있을 경우
- */
 
- if(result.hidden &&
- cards[result.hidden]){
+  [
+    "10",
+    "내가 가진 재능",
 
- const h=cards[result.hidden];
+`${first.ko}가 가진 ‘${first.essence}’은 당신의 중요한 재능으로 발전할 가능성이 있습니다.
 
- data.push([
- "12",
- "숨겨진 카드",
- `이 계산에는 한 가지 흥미로운 패턴도 있습니다.
+그리고 ${second.ko}의 ‘${second.essence}’도 함께 사용할 수 있습니다.
 
-${result.first}에 9를 더하면 ${result.hidden}이 되고, ${result.hidden}의 각 자릿수를 다시 더하면 ${result.first}로 돌아옵니다.
+두 카드가 서로 다르게 느껴진다면 오히려 그 차이가 당신만의 독특한 강점이 될 수 있습니다.
 
-${result.first} + 9 = ${result.hidden}
-${String(result.hidden).split("").join(" + ")} = ${result.first}
+한 가지 방식만 사용하는 사람이 아니라 상황에 따라 서로 다른 능력을 연결해 사용할 수 있기 때문입니다.`
+  ],
 
-따라서 ${h.ko}(${result.hidden})를 ${cards[result.first].ko}의 에너지와 연결되는 숨은 상징으로 함께 살펴볼 수도 있습니다.
 
-${h.essence}
+  [
+    "11",
+    "직업과 진로",
 
-다만 이 부분은 기본 두 장의 탄생 카드와 구분되는 보조적인 해석으로 보는 것이 좋습니다.`
- ]);
+`${first.ko}의 직업적인 방향을 살펴보면 다음과 같습니다.
 
- }
+${first.career}
 
+한편 ${second.ko}는 또 다른 방향을 보여줍니다.
 
- const container=
- document.getElementById("sections");
+${second.career}
 
- container.innerHTML="";
+따라서 진로나 직업을 선택할 때 단순히 잘할 수 있는 일만 보는 것보다 두 가지 에너지를 함께 사용할 수 있는 환경인지 살펴보는 것이 좋습니다.
 
+자신의 강점을 자연스럽게 사용할 수 있는 환경에서는 같은 일을 하더라도 만족감이 크게 달라질 수 있습니다.`
+  ],
 
- data.forEach(item=>{
 
- const box=document.createElement("div");
- box.className="section";
+  [
+    "12",
+    "스트레스를 받을 때",
 
- const num=document.createElement("div");
- num.className="section-number";
- num.textContent=item[0]+" · PERSONAL ARCANA";
+`스트레스가 커질수록 사람은 자신의 익숙한 방식을 더욱 강하게 사용하기 쉽습니다.
 
- const title=document.createElement("h3");
- title.textContent=item[1];
+당신에게는 ${first.ko}의 그림자인
 
- const text=document.createElement("p");
- text.textContent=item[2];
+“${first.shadow}”
 
- box.append(num,title,text);
- container.appendChild(box);
+와 같은 모습이 나타날 수 있습니다.
 
- });
+또한 감정적으로 지쳐 있을 때는 ${second.ko}의 그림자도 함께 나타날 수 있습니다.
 
+이럴 때 새로운 문제를 계속 해결하려 하기보다 잠시 자신의 에너지가 어디에서 소모되고 있는지 확인하는 것이 도움이 됩니다.`
+  ],
 
- document.getElementById("question")
- .textContent=
- `“${a.ko}의 내가 원하는 방향과 ${b.ko}의 내면이 지금 같은 곳을 바라보고 있나요?”`;
+
+  [
+    "13",
+    "내가 성장하는 방법",
+
+`${first.ko}가 알려주는 성장 방향은 다음과 같습니다.
+
+${first.growth}
+
+그리고 ${second.ko}는 또 하나의 방향을 보여줍니다.
+
+${second.growth}
+
+성장은 자신의 성향을 없애거나 완전히 다른 사람이 되는 과정이 아닙니다.
+
+이미 가지고 있는 힘을 더 정확하게 이해하고 필요한 순간에 적절하게 사용할 수 있게 되는 과정에 가깝습니다.`
+  ],
+
+
+  [
+    "14",
+    `${first.ko} × ${second.ko} 조합으로 보는 나`,
+
+`${first.ko}와 ${second.ko}가 함께 나타나는 조합입니다.
+
+첫 번째 카드는 ‘${first.essence}’을,
+연결된 카드는 ‘${second.essence}’을 이야기합니다.
+
+따라서 당신은 ${first.keywords}의 에너지를 사용하면서 동시에 ${second.keywords}의 방향을 함께 가지고 있을 수 있습니다.
+
+두 카드가 서로 다른 것처럼 느껴질수록 어느 한쪽을 없애려고 하기보다 두 가지 힘을 함께 사용할 수 있는 방법을 찾는 것이 중요합니다.
+
+그 지점에서 당신만의 개성과 가능성이 더욱 선명해질 수 있습니다.`
+  ],
+
+
+  [
+    "15",
+    "카드가 건네는 메시지",
+
+`${first.ko}는 당신에게 이렇게 묻습니다.
+
+“나는 지금 나에게 주어진 힘을 어떤 방향으로 사용하고 있는가?”
+
+그리고 ${second.ko}는 한 가지 질문을 더 건넵니다.
+
+“내가 정말 원하는 방향과 지금의 선택은 서로 연결되어 있는가?”
+
+탄생 카드는 미래를 결정하는 답이라기보다 자신의 모습을 새로운 관점에서 바라보기 위한 하나의 상징입니다.
+
+카드가 어떤 숫자인가보다 그 상징을 통해 지금의 자신에게 어떤 질문을 던질 수 있는지가 더 중요합니다.`
+  ]
+
+  ];
+
+
+  const container =
+    document.getElementById(
+      "sections"
+    );
+
+
+  container.innerHTML =
+    "";
+
+
+  data.forEach(
+    function(item){
+
+      const box =
+        document.createElement(
+          "div"
+        );
+
+      box.className =
+        "section";
+
+
+      const number =
+        document.createElement(
+          "div"
+        );
+
+      number.className =
+        "section-number";
+
+      number.textContent =
+        item[0] +
+        " · PERSONAL ARCANA";
+
+
+      const title =
+        document.createElement(
+          "h3"
+        );
+
+      title.textContent =
+        item[1];
+
+
+      const paragraph =
+        document.createElement(
+          "p"
+        );
+
+      paragraph.textContent =
+        item[2];
+
+
+      box.appendChild(
+        number
+      );
+
+      box.appendChild(
+        title
+      );
+
+      box.appendChild(
+        paragraph
+      );
+
+
+      container.appendChild(
+        box
+      );
+
+    }
+  );
+
+
+  document
+    .getElementById("question")
+    .textContent =
+
+    `“${first.ko}의 힘과 ${second.ko}의 가능성을 지금 나는 어떤 방식으로 함께 사용하고 있나요?”`;
 
 }
 
+
+/* ==========================================
+   다시하기
+========================================== */
 
 function resetReading(){
 
- document.getElementById("result")
- .style.display="none";
+  document
+    .getElementById("result")
+    .style.display =
+    "none";
 
- document.getElementById("start")
- .style.display="block";
 
- window.scrollTo({top:0});
+  document
+    .getElementById("loading")
+    .style.display =
+    "none";
+
+
+  document
+    .getElementById("start")
+    .style.display =
+    "block";
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
 }
 
 </script>
